@@ -12,11 +12,13 @@ struct LoginView: View {
         VStack{
             Text("NeoSTORE")
                 .font(.largeTitle)
-                .foregroundColor(.green)
+                .foregroundColor(.white)
                 .bold()
                 .padding(.bottom, 49)
 //                .background(Color.red, alignment: .init(horizontal: .center, vertical: .top))
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .background(Color.red)
         
     }
 }
