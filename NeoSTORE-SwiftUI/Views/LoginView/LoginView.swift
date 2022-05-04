@@ -11,6 +11,7 @@ struct LoginView: View {
     var body: some View {
         Label("Login View", systemImage: "person.fill")
             .foregroundColor(.red)
+            .background(Color.gray)
             .padding()
     }
 }
