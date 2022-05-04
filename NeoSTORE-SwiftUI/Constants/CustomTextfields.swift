@@ -15,7 +15,7 @@ struct SecureFieldWithImage: View {
         HStack(spacing: 5, content: {
             Image(imageName)
                 .frame(width: 54 ,height: 54, alignment: .center)
-                .scaledToFill()
+                .aspectRatio(contentMode: .fill)
                 .foregroundColor(.white)
             
             SecureField("Enter Password", text: $text)
@@ -36,8 +36,7 @@ struct TextFieldWithImage: View {
             Image(imageName)
                 .foregroundColor(.white)
                 .frame(width: 54 ,height: 54, alignment: .center)
-                .scaledToFill()
-                
+                .aspectRatio(contentMode: .fill)
             
             TextField("Enter Username", text: $text)
                 .foregroundColor(.white)

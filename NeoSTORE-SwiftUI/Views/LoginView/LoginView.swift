@@ -46,24 +46,29 @@ struct LoginView: View {
                     
                     Spacer()
                     
-                    HStack(spacing: 8, content: {
+                    HStack(alignment: .bottom, spacing: 8, content: {
                         Text("DON'T HAVE AN ACCOUNT?")
                             .font(.title3)
                             .foregroundColor(.white)
                             .bold()
+                            .frame(width: .none, height: .none, alignment: .topLeading)
+                        
                         Image("plus")
+                            .resizable()
+                            .scaledToFill()
                             .clipped()
                             .foregroundColor(.white)
                             .frame(width: 46, height: 46, alignment: .center)
-                            .scaledToFill()
                             .onTapGesture {
                                 debugPrint("Tapped Plus Icon!!")
                             }
+                            .frame(width: .none, height: .none, alignment: .trailing)
                     })
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(EdgeInsets(top: 33, leading: 0, bottom: 0, trailing: 0))
                     
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             })
             
