@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-        Text("Hello, world!")
-            .background(Color.red)
+        Label("Login View", systemImage: "person.fill")
+            .foregroundColor(.red)
             .padding()
     }
 }
