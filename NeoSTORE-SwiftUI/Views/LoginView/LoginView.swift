@@ -13,7 +13,7 @@ struct LoginView: View {
     
     var body: some View {
         ZStack(alignment: .center){
-            Color.red
+            Color.appRed
             
             ScrollView(.vertical, showsIndicators: false, content: {
                 VStack(spacing: 0){

@@ -19,7 +19,7 @@ struct SecureFieldWithImage: View {
                 .foregroundColor(.white)
             
             SecureField("Enter Password", text: $text)
-                .background(Color.red)
+                .background(Color.appRed)
                 .frame(height: 54, alignment: .center)
                 .foregroundColor(.white)
         })
@@ -40,7 +40,7 @@ struct TextFieldWithImage: View {
             
             TextField("Enter Username", text: $text)
                 .foregroundColor(.white)
-                .background(Color.red)
+                .background(Color.appRed)
                 .frame(height: 54, alignment: .center)
         })
         .border(Color.white, width: 2)
