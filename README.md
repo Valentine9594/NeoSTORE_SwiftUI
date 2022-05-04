@@ -1,2 +1,2 @@
 # NeoSTORE_SwiftUI
-Building a sample store application using SwiftUI.
+Building a sample furniture store application using SwiftUI.
