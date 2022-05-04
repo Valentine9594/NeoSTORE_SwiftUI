@@ -41,7 +41,6 @@ struct LoginView: View {
                     })
                     .foregroundColor(.red)
                     .background(Color.white)
-                    .frame(width: 400, height: 26, alignment: .center)
                     .padding(EdgeInsets(top: 33, leading: 0, bottom: 21, trailing: 0))
                     
                     Text("Forgot Password?")
@@ -53,14 +52,27 @@ struct LoginView: View {
                             debugPrint("Tapped Forgot Password!!")
                         }
                     
-                    HStack(spacing: 0, content: {
-                        Text("Placeholder")
-                        Text("New")
+                    Spacer()
+                    
+                    HStack(spacing: 8, content: {
+                        Text("DON'T HAVE AN ACCOUNT?")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .bold()
+                        Image("plus")
+                            .clipped()
+                            .foregroundColor(.white)
+                            .frame(width: 46, height: 46, alignment: .center)
+                            .scaledToFill()
+                            .onTapGesture {
+                                debugPrint("Tapped Plus Icon!!")
+                            }
                     })
-                    .frame(alignment: .bottomLeading)
+                    .padding(EdgeInsets(top: 33, leading: 0, bottom: 0, trailing: 0))
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                
             })
             
         }
