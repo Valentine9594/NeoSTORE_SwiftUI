@@ -13,7 +13,7 @@ struct LoginView: View {
     
     var body: some View {
         ZStack(alignment: .center){
-            Color.red.ignoresSafeArea()
+            Color.red
             
             ScrollView(.vertical, showsIndicators: false, content: {
                 VStack(spacing: 0){
@@ -31,23 +31,15 @@ struct LoginView: View {
                     })
                     .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
 
-                    Button(action: {
-                        debugPrint("Login Button Clicked!!")
-                    }, label: {
-                        Text("LOGIN")
-                            .font(.custom("", size: 22))
-                            .bold()
-                            .padding(5)
-                    })
-                    .foregroundColor(.red)
-                    .background(Color.white)
-                    .padding(EdgeInsets(top: 33, leading: 0, bottom: 21, trailing: 0))
+                    ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
+                        debugPrint("Clicked Login!!!")
+                    }
                     
                     Text("Forgot Password?")
-                        .font(.title3)
-                        .foregroundColor(.white)
                         .bold()
+                        .foregroundColor(.white)
                         .padding(.bottom, 33)
+                        .font(.title3)
                         .onTapGesture {
                             debugPrint("Tapped Forgot Password!!")
                         }
@@ -85,4 +77,5 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
 
