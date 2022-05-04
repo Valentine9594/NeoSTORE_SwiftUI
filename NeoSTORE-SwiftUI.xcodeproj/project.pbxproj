@@ -11,6 +11,8 @@
 		92F5555E2822531D00C68488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555D2822531D00C68488 /* ContentView.swift */; };
 		92F555602822532100C68488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F5555F2822532100C68488 /* Assets.xcassets */; };
 		92F555632822532100C68488 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F555622822532100C68488 /* Preview Assets.xcassets */; };
+		92F5556E282257E100C68488 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5556D282257E100C68488 /* Models.swift */; };
+		92F555702822580E00C68488 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5556F2822580E00C68488 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		92F5555F2822532100C68488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92F555622822532100C68488 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		92F555642822532100C68488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F5556D282257E100C68488 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		92F5556F2822580E00C68488 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		92F5556A282256D100C68488 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				92F5556D282257E100C68488 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -81,6 +86,7 @@
 		92F5556B282256D800C68488 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				92F5556F2822580E00C68488 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -162,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F5556E282257E100C68488 /* Models.swift in Sources */,
 				92F5555E2822531D00C68488 /* ContentView.swift in Sources */,
 				92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */,
+				92F555702822580E00C68488 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
