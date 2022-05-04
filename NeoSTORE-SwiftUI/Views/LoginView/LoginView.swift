@@ -9,10 +9,15 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-        Label("Login View", systemImage: "person.fill")
-            .foregroundColor(.red)
-            .background(Color.gray)
-            .padding()
+        VStack{
+            Text("NeoSTORE")
+                .font(.largeTitle)
+                .foregroundColor(.green)
+                .bold()
+                .padding(.bottom, 49)
+//                .background(Color.red, alignment: .init(horizontal: .center, vertical: .top))
+        }
+        
     }
 }
 
