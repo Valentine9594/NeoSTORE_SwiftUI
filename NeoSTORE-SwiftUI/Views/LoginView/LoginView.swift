@@ -51,20 +51,21 @@ struct LoginView: View {
                             .font(.title3)
                             .foregroundColor(.white)
                             .bold()
-                            .frame(width: .none, height: .none, alignment: .topLeading)
+                            .frame(width: .none, height: .none, alignment: .leading)
                         
                         Image("plus")
                             .resizable()
-                            .scaledToFill()
+                            .aspectRatio(contentMode: .fill)
                             .clipped()
                             .foregroundColor(.white)
+                            .background(Color.appMaroon)
                             .frame(width: 46, height: 46, alignment: .center)
                             .onTapGesture {
                                 debugPrint("Tapped Plus Icon!!")
                             }
                             .frame(width: .none, height: .none, alignment: .trailing)
                     })
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                     .padding(EdgeInsets(top: 33, leading: 0, bottom: 0, trailing: 0))
                     
                 }
@@ -73,6 +74,7 @@ struct LoginView: View {
             })
             
         }
+        
     }
     
 }
