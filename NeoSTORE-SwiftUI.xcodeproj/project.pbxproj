@@ -52,8 +52,10 @@
 		92F5555A2822531D00C68488 /* NeoSTORE-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				92F5556C282256E000C68488 /* Views */,
+				92F5556B282256D800C68488 /* Constants */,
+				92F5556A282256D100C68488 /* Models */,
 				92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */,
-				92F5555D2822531D00C68488 /* ContentView.swift */,
 				92F5555F2822532100C68488 /* Assets.xcassets */,
 				92F555642822532100C68488 /* Info.plist */,
 				92F555612822532100C68488 /* Preview Content */,
@@ -67,6 +69,28 @@
 				92F555622822532100C68488 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		92F5556A282256D100C68488 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92F5556B282256D800C68488 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		92F5556C282256E000C68488 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92F5555D2822531D00C68488 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
