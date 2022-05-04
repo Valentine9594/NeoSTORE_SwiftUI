@@ -13,6 +13,7 @@
 		92F555632822532100C68488 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F555622822532100C68488 /* Preview Assets.xcassets */; };
 		92F5556E282257E100C68488 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5556D282257E100C68488 /* Models.swift */; };
 		92F555702822580E00C68488 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5556F2822580E00C68488 /* Constants.swift */; };
+		92F555732822599400C68488 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F555722822599400C68488 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		92F555642822532100C68488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92F5556D282257E100C68488 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		92F5556F2822580E00C68488 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		92F555722822599400C68488 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +96,18 @@
 		92F5556C282256E000C68488 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				92F555712822593A00C68488 /* LoginView */,
 				92F5555D2822531D00C68488 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		92F555712822593A00C68488 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				92F555722822599400C68488 /* LoginView.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +182,7 @@
 				92F5556E282257E100C68488 /* Models.swift in Sources */,
 				92F5555E2822531D00C68488 /* ContentView.swift in Sources */,
 				92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */,
+				92F555732822599400C68488 /* LoginView.swift in Sources */,
 				92F555702822580E00C68488 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

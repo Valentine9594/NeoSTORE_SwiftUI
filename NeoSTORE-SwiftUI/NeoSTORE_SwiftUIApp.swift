@@ -11,7 +11,8 @@ import SwiftUI
 struct NeoSTORE_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            LoginView()
         }
     }
 }
