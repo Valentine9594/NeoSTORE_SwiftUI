@@ -14,67 +14,72 @@ struct LoginView: View {
     var body: some View {
         ZStack(){
             Color.appRed
+            Spacer()
             
-            ScrollView(.vertical, showsIndicators: false, content: {
-                VStack(spacing: 0){
-//                    Spacer()
-                    
-                    Text("NeoSTORE")
-                        .font(.custom("", size: 45))
-                        .foregroundColor(.white)
-                        .bold()
-                        .padding(EdgeInsets(top: 150, leading: 0, bottom: 49, trailing: 0))
-                    
-                    VStack(alignment: .center, spacing: 16, content: {
-                        TextFieldWithImage(imageName: "username_icon", text: $usernameTextfield)
-                        
-                        SecureFieldWithImage(imageName: "password_icon", text: $passwordTextfield)
-              
-                    })
-                    .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
+            GeometryReader(content: { geometry in
 
-                    ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
-                        debugPrint("Clicked Login!!!")
-                    }
-                    
-                    Text("Forgot Password?")
-                        .bold()
-                        .foregroundColor(.white)
-                        .padding(.bottom, 33)
-                        .font(.title3)
-                        .multilineTextAlignment(.center)
-                        .onTapGesture {
-                            debugPrint("Tapped Forgot Password!!")
-                        }
-                    
-                    Spacer()
-                    
-                    HStack(alignment: .center, spacing: 8, content: {
-                        Text("DON'T HAVE AN ACCOUNT?")
-                            .font(.title3)
+                ScrollView(.vertical, showsIndicators: false, content: {
+                    VStack(spacing: 0){
+                        Spacer(minLength: 0.16*geometry.size.height)
+                        
+                        Text("NeoSTORE")
+                            .font(.custom("", size: 45))
                             .foregroundColor(.white)
                             .bold()
-                            .frame(width: .none, height: .none, alignment: .leading)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
                         
-                        Image("plus")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .clipped()
+                        VStack(alignment: .center, spacing: 16, content: {
+                            TextFieldWithImage(placeholder: Text("Username"), imageName: "username_icon", text: $usernameTextfield)
+                            
+                            SecureFieldWithImage(placeholder: Text("Password"), imageName: "password_icon", text: $passwordTextfield)
+                  
+                        })
+                        .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
+
+                        ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
+                            debugPrint("Clicked Login!!!")
+                        }
+                        
+                        Text("Forgot Password?")
+                            .bold()
                             .foregroundColor(.white)
-                            .background(Color.appMaroon)
-                            .frame(width: 46, height: 46, alignment: .center)
+                            .padding(.bottom, 33)
+                            .font(.title3)
+                            .multilineTextAlignment(.center)
                             .onTapGesture {
-                                debugPrint("Tapped Plus Icon!!")
+                                debugPrint("Tapped Forgot Password!!")
                             }
-                            .frame(width: .none, height: .none, alignment: .trailing)
-                    })
-                    .padding(EdgeInsets(top: 33, leading: 0, bottom: 0, trailing: 0))
+                        
+                        Spacer(minLength: 0.16*geometry.size.height)
+                        
+                        HStack(alignment: .center, spacing: 33, content: {
+                            Text("DON'T HAVE AN ACCOUNT?")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .bold()
+                                .frame(width: .none, height: .none, alignment: .leading)
+                            
+                            Image("plus")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                                .foregroundColor(.white)
+                                .background(Color.appMaroon)
+                                .frame(width: 46, height: 46, alignment: .trailing)
+                                .onTapGesture {
+                                    debugPrint("Tapped Plus Icon!!")
+                                }
+
+                        })
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
-                }
+                })
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             })
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
         }
         

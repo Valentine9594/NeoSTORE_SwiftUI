@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct SecureFieldWithImage: View {
+    var placeholder: Text
     var imageName: String = "person.fill"
     @Binding var text: String
-    
+    var onCommit: ()->() = { }
+
     var body: some View {
         HStack(spacing: 5, content: {
             Image(imageName)
@@ -18,7 +20,10 @@ struct SecureFieldWithImage: View {
                 .aspectRatio(contentMode: .fill)
                 .foregroundColor(.white)
             
-            SecureField("Enter Password", text: $text)
+            if text.isEmpty { placeholder
+                .foregroundColor(.white)
+            }
+            SecureField("", text: $text, onCommit: onCommit)
                 .frame(height: 54, alignment: .center)
                 .background(Color.appRed)
                 .foregroundColor(.white)
@@ -29,8 +34,11 @@ struct SecureFieldWithImage: View {
 }
 
 struct TextFieldWithImage: View {
+    var placeholder: Text
     var imageName: String = "person.fill"
     @Binding var text: String
+    var editingChanged: (Bool) -> () = {_ in}
+    var onCommit: ()->() = { }
     
     var body: some View {
         HStack(spacing: 5, content: {
@@ -39,7 +47,11 @@ struct TextFieldWithImage: View {
                 .frame(width: 54 ,height: 54, alignment: .center)
                 .aspectRatio(contentMode: .fill)
             
-            TextField("Enter Username", text: $text)
+            if text.isEmpty { placeholder
+                .foregroundColor(.white)
+            }
+            
+            TextField("", text: $text, onEditingChanged: editingChanged, onCommit: onCommit)
                 .frame(height: 54, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.appRed)
