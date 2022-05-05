@@ -17,6 +17,8 @@ struct LoginView: View {
             
             ScrollView(.vertical, showsIndicators: false, content: {
                 VStack(spacing: 0){
+//                    Spacer()
+                    
                     Text("NeoSTORE")
                         .font(.custom("", size: 45))
                         .foregroundColor(.white)
