@@ -12,7 +12,7 @@ struct LoginView: View {
     @State private var passwordTextfield: String = ""
     
     var body: some View {
-        ZStack(alignment: .center){
+        ZStack(){
             Color.appRed
             
             ScrollView(.vertical, showsIndicators: false, content: {
@@ -23,7 +23,7 @@ struct LoginView: View {
                         .bold()
                         .padding(EdgeInsets(top: 150, leading: 0, bottom: 49, trailing: 0))
                     
-                    VStack(spacing: 16, content: {
+                    VStack(alignment: .center, spacing: 16, content: {
                         TextFieldWithImage(imageName: "username_icon", text: $usernameTextfield)
                         
                         SecureFieldWithImage(imageName: "password_icon", text: $passwordTextfield)
@@ -40,23 +40,19 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .padding(.bottom, 33)
                         .font(.title3)
+                        .multilineTextAlignment(.center)
                         .onTapGesture {
                             debugPrint("Tapped Forgot Password!!")
                         }
                     
                     Spacer()
                     
-                    HStack(alignment: .bottom, spacing: 8, content: {
-                        
-                        VStack(alignment: .center, spacing: 0, content: {
-                            Spacer()
-                            Text("DON'T HAVE AN ACCOUNT?")
-                                .font(.title3)
-                                .foregroundColor(.white)
-                                .bold()
-                                .frame(width: .none, height: .none, alignment: .leading)
-                            Spacer()
-                        })
+                    HStack(alignment: .center, spacing: 8, content: {
+                        Text("DON'T HAVE AN ACCOUNT?")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .bold()
+                            .frame(width: .none, height: .none, alignment: .leading)
                         
                         Image("plus")
                             .resizable()
@@ -70,13 +66,13 @@ struct LoginView: View {
                             }
                             .frame(width: .none, height: .none, alignment: .trailing)
                     })
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                     .padding(EdgeInsets(top: 33, leading: 0, bottom: 0, trailing: 0))
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             })
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
         }
         
