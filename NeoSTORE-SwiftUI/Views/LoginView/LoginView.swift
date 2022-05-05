@@ -47,11 +47,16 @@ struct LoginView: View {
                     Spacer()
                     
                     HStack(alignment: .bottom, spacing: 8, content: {
-                        Text("DON'T HAVE AN ACCOUNT?")
-                            .font(.title3)
-                            .foregroundColor(.white)
-                            .bold()
-                            .frame(width: .none, height: .none, alignment: .leading)
+                        
+                        VStack(alignment: .center, spacing: 0, content: {
+                            Spacer()
+                            Text("DON'T HAVE AN ACCOUNT?")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .bold()
+                                .frame(width: .none, height: .none, alignment: .leading)
+                            Spacer()
+                        })
                         
                         Image("plus")
                             .resizable()

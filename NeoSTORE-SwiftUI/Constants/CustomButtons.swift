@@ -25,6 +25,7 @@ struct ButtonWithForegroundAndBackgroundColorWithText: View {
         .frame(maxWidth: .infinity, minHeight: 48)
         .foregroundColor(buttonForegroundColor)
         .background(buttonBackgroundColor)
+        .cornerRadius(7)
         .padding(EdgeInsets(top: 33, leading: 33, bottom: 21, trailing: 33))
     }
 }

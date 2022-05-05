@@ -19,9 +19,10 @@ struct SecureFieldWithImage: View {
                 .foregroundColor(.white)
             
             SecureField("Enter Password", text: $text)
-                .background(Color.appRed)
                 .frame(height: 54, alignment: .center)
+                .background(Color.appRed)
                 .foregroundColor(.white)
+                .font(.headline)
         })
         .border(Color.white, width: 2)
     }
@@ -39,9 +40,10 @@ struct TextFieldWithImage: View {
                 .aspectRatio(contentMode: .fill)
             
             TextField("Enter Username", text: $text)
+                .frame(height: 54, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.appRed)
-                .frame(height: 54, alignment: .center)
+                .font(.headline)
         })
         .border(Color.white, width: 2)
     }
