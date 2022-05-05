@@ -26,9 +26,9 @@ struct LoginView: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
                     
                     VStack(alignment: .center, spacing: 16, content: {
-                        TextFieldWithImage(placeholder: Text("Username"), imageName: "username_icon", text: $usernameTextfield)
+                        TextFieldWithImage(placeholder: "Username", imageName: "username_icon", text: $usernameTextfield)
                         
-                        SecureFieldWithImage(placeholder: Text("Password"), imageName: "password_icon", text: $passwordTextfield)
+                        SecureFieldWithImage(placeholder: "Password", imageName: "password_icon", text: $passwordTextfield)
               
                     })
                     .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))

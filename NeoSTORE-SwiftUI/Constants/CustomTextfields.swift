@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct SecureFieldWithImage: View {
-    var placeholder: Text
+    var placeholder: String
     var imageName: String = "person.fill"
     @Binding var text: String
-    var onCommit: ()->() = { }
 
     var body: some View {
         HStack(spacing: 5, content: {
@@ -20,25 +19,17 @@ struct SecureFieldWithImage: View {
                 .aspectRatio(contentMode: .fill)
                 .foregroundColor(.white)
             
-            if text.isEmpty { placeholder
-                .foregroundColor(.white)
-            }
-            SecureField("", text: $text, onCommit: onCommit)
-                .frame(height: 54, alignment: .center)
-                .background(Color.appRed)
-                .foregroundColor(.white)
-                .font(.headline)
+            SecureField("", text: $text)
+                .modifier(PlaceHolderStyle(showPlaceholder: text.isEmpty || text == "", placeholder: placeholder))
         })
         .border(Color.white, width: 2)
     }
 }
 
 struct TextFieldWithImage: View {
-    var placeholder: Text
+    var placeholder: String
     var imageName: String = "person.fill"
     @Binding var text: String
-    var editingChanged: (Bool) -> () = {_ in}
-    var onCommit: ()->() = { }
     
     var body: some View {
         HStack(spacing: 5, content: {
@@ -47,16 +38,35 @@ struct TextFieldWithImage: View {
                 .frame(width: 54 ,height: 54, alignment: .center)
                 .aspectRatio(contentMode: .fill)
             
-            if text.isEmpty { placeholder
-                .foregroundColor(.white)
+            TextField("", text: $text)
+                .modifier(PlaceHolderStyle(showPlaceholder: text.isEmpty || text == "", placeholder: placeholder))
+        })
+        .border(Color.white, width: 2)
+    }
+}
+
+public struct PlaceHolderStyle: ViewModifier{
+    var showPlaceholder: Bool
+    var placeholder: String
+    
+    public func body(content: Content) -> some View {
+        ZStack(alignment: .leading, content: {
+            if showPlaceholder{
+                Text(placeholder)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .bold()
+                    .zIndex(2)
             }
-            
-            TextField("", text: $text, onEditingChanged: editingChanged, onCommit: onCommit)
+            content
                 .frame(height: 54, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.appRed)
                 .font(.headline)
+                .zIndex(1)
         })
-        .border(Color.white, width: 2)
+        .onAppear(perform: {
+            debugPrint(showPlaceholder)
+        })
     }
 }
