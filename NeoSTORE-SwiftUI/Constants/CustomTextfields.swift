@@ -63,10 +63,9 @@ public struct PlaceHolderStyle: ViewModifier{
                 .foregroundColor(.white)
                 .background(Color.appRed)
                 .font(.headline)
+                .clipped()
                 .zIndex(1)
         })
-        .onAppear(perform: {
-            debugPrint(showPlaceholder)
-        })
+
     }
 }

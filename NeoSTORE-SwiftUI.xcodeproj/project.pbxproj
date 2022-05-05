@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		926846A228240C7E000368F6 /* ConstantFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926846A128240C7E000368F6 /* ConstantFunctions.swift */; };
 		92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */; };
 		92F5555E2822531D00C68488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555D2822531D00C68488 /* ContentView.swift */; };
 		92F555602822532100C68488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F5555F2822532100C68488 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		926846A128240C7E000368F6 /* ConstantFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantFunctions.swift; sourceTree = "<group>"; };
 		92F555582822531D00C68488 /* NeoSTORE-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeoSTORE-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSTORE_SwiftUIApp.swift; sourceTree = "<group>"; };
 		92F5555D2822531D00C68488 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				92F5556F2822580E00C68488 /* CustomTextfields.swift */,
 				92F555742822B91700C68488 /* CustomButtons.swift */,
 				92F555762822C0D300C68488 /* Extensions.swift */,
+				926846A128240C7E000368F6 /* ConstantFunctions.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				92F555732822599400C68488 /* LoginView.swift in Sources */,
 				92F555752822B91700C68488 /* CustomButtons.swift in Sources */,
 				92F555702822580E00C68488 /* CustomTextfields.swift in Sources */,
+				926846A228240C7E000368F6 /* ConstantFunctions.swift in Sources */,
 				92F555772822C0D300C68488 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

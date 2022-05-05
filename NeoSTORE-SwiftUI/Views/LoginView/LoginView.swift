@@ -11,45 +11,47 @@ struct LoginView: View {
     @State private var usernameTextfield: String = ""
     @State private var passwordTextfield: String = ""
     
+    
     var body: some View {
-        ZStack(){
+        ZStack(alignment: .bottom){
             Color.appRed
             
             ScrollView(.vertical, showsIndicators: false, content: {
                 VStack(spacing: 0){
-                    Spacer(minLength: 0.14*UIScreen.main.bounds.height)
+                    Spacer(minLength: UIScreen.main.bounds.size.height/8)
                     
-                    Text("NeoSTORE")
-                        .font(.custom("", size: 45))
-                        .foregroundColor(.white)
-                        .bold()
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
-                    
-                    VStack(alignment: .center, spacing: 16, content: {
-                        TextFieldWithImage(placeholder: "Username", imageName: "username_icon", text: $usernameTextfield)
+                    VStack(alignment: .center, spacing: nil, content: {
+                        Text("NeoSTORE")
+                            .font(.custom("", size: 45))
+                            .foregroundColor(.white)
+                            .bold()
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
                         
-                        SecureFieldWithImage(placeholder: "Password", imageName: "password_icon", text: $passwordTextfield)
-              
-                    })
-                    .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
+                        VStack(alignment: .center, spacing: 16, content: {
+                            TextFieldWithImage(placeholder: "Username", imageName: "username_icon", text: $usernameTextfield)
+                            
+                            SecureFieldWithImage(placeholder: "Password", imageName: "password_icon", text: $passwordTextfield)
+                  
+                        })
+                        .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
 
-                    ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
-                        debugPrint("Clicked Login!!!")
-                    }
-                    
-                    Text("Forgot Password?")
-                        .bold()
-                        .foregroundColor(.white)
-                        .padding(.bottom, 33)
-                        .font(.title3)
-                        .multilineTextAlignment(.center)
-                        .onTapGesture {
-                            debugPrint("Tapped Forgot Password!!")
+                        ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
+                            debugPrint("Clicked Login!!!")
                         }
-                    
-                    Spacer(minLength: 0.18*UIScreen.main.bounds.height).onAppear(perform: {
-                        debugPrint("space: \(0.18*UIScreen.main.bounds.height)")
+                        
+                        Text("Forgot Password?")
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding(.bottom, 33)
+                            .font(.title3)
+                            .multilineTextAlignment(.center)
+                            .onTapGesture {
+                                debugPrint("Tapped Forgot Password!!")
+                            }
                     })
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                    Spacer(minLength: UIScreen.main.bounds.size.height/20)
                     
                     HStack(alignment: .center, spacing: 33, content: {
                         Text("DON'T HAVE AN ACCOUNT?")
@@ -70,7 +72,7 @@ struct LoginView: View {
                             }
 
                     })
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(EdgeInsets(top: 60, leading: 5, bottom: 5, trailing: 5))
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -79,6 +81,7 @@ struct LoginView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
         }
+        .clipped()
         
     }
     
