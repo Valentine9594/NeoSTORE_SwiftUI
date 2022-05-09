@@ -16,11 +16,13 @@ struct LoginView: View {
         ZStack(alignment: .bottom){
             Color.appRed
             
-            ScrollView(.vertical, showsIndicators: false, content: {
-                VStack(spacing: 0){
-                    Spacer(minLength: UIScreen.main.bounds.size.height/8)
+//            ScrollView{
+                
+                VStack{
+                    Spacer(minLength: 150)
                     
                     VStack(alignment: .center, spacing: nil, content: {
+                        
                         Text("NeoSTORE")
                             .font(.custom("", size: 45))
                             .foregroundColor(.white)
@@ -42,45 +44,46 @@ struct LoginView: View {
                         Text("Forgot Password?")
                             .bold()
                             .foregroundColor(.white)
-                            .padding(.bottom, 33)
                             .font(.title3)
                             .multilineTextAlignment(.center)
                             .onTapGesture {
                                 debugPrint("Tapped Forgot Password!!")
                             }
-                    })
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
-                    Spacer(minLength: UIScreen.main.bounds.size.height/20)
-                    
-                    HStack(alignment: .center, spacing: 33, content: {
-                        Text("DON'T HAVE AN ACCOUNT?")
-                            .font(.title3)
-                            .foregroundColor(.white)
-                            .bold()
-                            .frame(width: .none, height: .none, alignment: .leading)
                         
-                        Image("plus")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .clipped()
-                            .foregroundColor(.white)
-                            .background(Color.appMaroon)
-                            .frame(width: 46, height: 46, alignment: .trailing)
-                            .onTapGesture {
-                                debugPrint("Tapped Plus Icon!!")
-                            }
+                        Spacer()
+                            .frame(width: UIScreen.main.bounds.size.width)
+                        
+                        HStack(alignment: .center, spacing: 33, content: {
+                            Text("DON'T HAVE AN ACCOUNT?")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .bold()
+                                .frame(width: .none, height: .none, alignment: .leading)
+                            
+                            Image("plus")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                                .foregroundColor(.white)
+                                .background(Color.appMaroon)
+                                .frame(width: 46, height: 46, alignment: .trailing)
+                                .onTapGesture {
+                                    debugPrint("Tapped Plus Icon!!")
+                                }
 
+                        })
+                        .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: 50)
+                        .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
                     })
-                    .padding(EdgeInsets(top: 60, leading: 5, bottom: 5, trailing: 5))
                     
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: UIScreen.main.bounds.size.height)
                 
-            })
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            }
+//            .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: UIScreen.main.bounds.size.height)
             
         }
+        .frame(maxWidth: UIScreen.main.bounds.size.height, maxHeight: UIScreen.main.bounds.size.height)
         .clipped()
         
     }
