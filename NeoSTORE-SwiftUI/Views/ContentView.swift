@@ -9,11 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-            .alignmentGuide(.top, computeValue: { dimension in
-                .infinity
+
+        GeometryReader(content: { geometry in
+            ScrollView(.vertical, showsIndicators: false, content: {
+                VStack{
+                    Text("Top")
+                    Spacer()
+                    HStack{
+                        Text("Leading")
+                        Spacer()
+                        Text("Trailing")
+                    }
+                    Spacer()
+                    Text("Bottom")
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height)
             })
+        })
+        
+        
     }
 }
 
