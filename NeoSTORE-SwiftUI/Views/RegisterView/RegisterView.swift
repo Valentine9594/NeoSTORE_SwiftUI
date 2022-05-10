@@ -18,7 +18,7 @@ struct RegisterView: View {
     @State private var agreetermsAndConditions: Bool = false
     
     var body: some View {
-        ZStack(alignment: .bottom){
+        ZStack(alignment: .center){
             Color.appRed
             
             GeometryReader(content: { geometry in
@@ -73,12 +73,13 @@ struct RegisterView: View {
                             })
                             .padding(EdgeInsets(top: 0, leading: 33, bottom: 16, trailing: 33))
                             
-                            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 2, content: {
+                            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8, content: {
                                 Image(agreetermsAndConditions ? "checked_icon" : "uncheck_icon")
                                 
                                 Text("I AGREE THE") + Text("TERMS AND CONDITIONS").underline()
                             })
                             .foregroundColor(.white)
+                            .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
                             .onTapGesture(perform: {
                                 agreetermsAndConditions = !agreetermsAndConditions
                             })
@@ -101,7 +102,7 @@ struct RegisterView: View {
                         })
                         
                     }
-                    .frame(width: geometry.size.width, height: 900)
+                    .frame(width: geometry.size.width, height: 800)
                     
                 }
                 .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: 800)
@@ -117,8 +118,9 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
-            .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/396.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/903.0/*@END_MENU_TOKEN@*/))
             .environment(\.sizeCategory, .extraExtraLarge)
+            .previewLayout(.fixed(width: 396.0, height: /*@START_MENU_TOKEN@*/800.0/*@END_MENU_TOKEN@*/))
+            
     }
 }
 

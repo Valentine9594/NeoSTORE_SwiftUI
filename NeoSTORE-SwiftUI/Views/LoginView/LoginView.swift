@@ -10,11 +10,11 @@ import SwiftUI
 struct LoginView: View {
     @State private var usernameTextfield: String = ""
     @State private var passwordTextfield: String = ""
-    
+    @State private var toNavigate: Bool = false
     
     var body: some View {
-//        NavigationView{
-            ZStack(alignment: .bottom){
+        NavigationView{
+            ZStack(alignment: .center){
                 Color.appRed
                 
                 GeometryReader(content: { geometry in
@@ -22,6 +22,11 @@ struct LoginView: View {
                         
                         VStack{
                             VStack(alignment: .center, spacing: nil, content: {
+                                NavigationLink(
+                                    "", destination: RegisterView(),
+                                    isActive: $toNavigate)
+                                    .navigationBarHidden(true)
+                                
                                 Spacer()
                                 
                                 Text("NeoSTORE")
@@ -69,24 +74,24 @@ struct LoginView: View {
                                         .frame(width: 46, height: 46, alignment: .trailing)
                                         .onTapGesture {
                                             debugPrint("Tapped Plus Icon!!")
-                                                
+                                            toNavigate = true
                                         }
 
                                 })
-                                .frame(width: geometry.size.width, height: 50)
+                                .frame(width: UIScreen.main.bounds.size.width, height: 50)
                                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                             })
                             
                         }
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        
+                        .ignoresSafeArea(.keyboard)
+                        .frame(width: UIScreen.main.bounds.size.width, height: (UIScreen.main.bounds.size.height-geometry.safeAreaInsets.bottom-2)*0.95)
                     }
-                    .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: UIScreen.main.bounds.size.height)
+                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
                 })
                 
             }
             .clipped()
-//        }
+        }
         
     }
     
