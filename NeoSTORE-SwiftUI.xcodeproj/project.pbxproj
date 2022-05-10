@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		922278CB282A42BF00BBB169 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922278CA282A42BF00BBB169 /* RegisterView.swift */; };
 		926846A228240C7E000368F6 /* ConstantFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926846A128240C7E000368F6 /* ConstantFunctions.swift */; };
 		92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */; };
 		92F5555E2822531D00C68488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555D2822531D00C68488 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		922278CA282A42BF00BBB169 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		926846A128240C7E000368F6 /* ConstantFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantFunctions.swift; sourceTree = "<group>"; };
 		92F555582822531D00C68488 /* NeoSTORE-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeoSTORE-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSTORE_SwiftUIApp.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		922278C9282A429E00BBB169 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				922278CA282A42BF00BBB169 /* RegisterView.swift */,
+			);
+			path = RegisterView;
+			sourceTree = "<group>";
+		};
 		92F5554F2822531D00C68488 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		92F5556C282256E000C68488 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				922278C9282A429E00BBB169 /* RegisterView */,
 				92F555712822593A00C68488 /* LoginView */,
 				92F5555D2822531D00C68488 /* ContentView.swift */,
 			);
@@ -188,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922278CB282A42BF00BBB169 /* RegisterView.swift in Sources */,
 				92F5556E282257E100C68488 /* Models.swift in Sources */,
 				92F5555E2822531D00C68488 /* ContentView.swift in Sources */,
 				92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */,
