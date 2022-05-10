@@ -13,6 +13,9 @@ struct RegisterView: View {
     @State private var emailText: String = ""
     @State private var passwordText: String = ""
     @State private var confirmPasswordText: String = ""
+    @State private var phoneText: String = ""
+    @State private var genderText: String = "Male"
+    @State private var agreetermsAndConditions: Bool = false
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -31,7 +34,7 @@ struct RegisterView: View {
                                 .bold()
                                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
                             
-                            VStack(alignment: .center, spacing: 16, content: {
+                            VStack(alignment: .center, spacing: 14, content: {
                                 TextFieldWithImage(placeholder: "First Name", imageName: "username_icon", text: $firstnameText)
                                 
                                 TextFieldWithImage(placeholder: "Last Name", imageName: "username_icon", text: $lastnameText)
@@ -41,18 +44,52 @@ struct RegisterView: View {
                                 SecureFieldWithImage(placeholder: "Password", imageName: "cpassword_icon", text: $passwordText)
                                 
                                 SecureFieldWithImage(placeholder: "Confirm Password", imageName: "password_icon", text: $confirmPasswordText)
+                                
+                                HStack(alignment: .center, spacing: 5, content: {
+                                    Text("Gender:")
+                                        .bold()
+                                    
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        genderText = "Male"
+                                    }, label: {
+                                        Label("Male", image: genderText == "Male" ? "chky" : "chkn")
+                                    })
+                                    
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        genderText = "Female"
+                                    }, label: {
+                                        Label("Female", image: genderText == "Female" ? "chky" : "chkn")
+                                    })
+                                })
+                                .foregroundColor(.white)
+                                .padding(8)
+                                
+                                TextFieldWithImage(placeholder: "Phone Number", imageName: "cellphone_icon", text: $phoneText)
                       
                             })
                             .padding(EdgeInsets(top: 0, leading: 33, bottom: 16, trailing: 33))
                             
-                            Text("Forgot Password?")
-                                .bold()
-                                .foregroundColor(.white)
-                                .font(.title3)
-                                .multilineTextAlignment(.center)
-                                .onTapGesture {
-                                    debugPrint("Tapped Forgot Password!!")
-                                }
+                            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 2, content: {
+                                Image(agreetermsAndConditions ? "checked_icon" : "uncheck_icon")
+                                
+                                Text("I AGREE THE") + Text("TERMS AND CONDITIONS").underline()
+                            })
+                            .foregroundColor(.white)
+                            .onTapGesture(perform: {
+                                agreetermsAndConditions = !agreetermsAndConditions
+                            })
+                            
+//                            Button(action: {
+//                                agreetermsAndConditions = !agreetermsAndConditions
+//                            }, label: {
+//                                Label("I AGREE THE TERMS AND CONDITIONS", image: agreetermsAndConditions ? "checked_icon" : "uncheck_icon")
+//                                    .frame(width: geometry.size.width, height: 50, alignment: .center)
+//                            })
+//                            .foregroundColor(.white)
 
 
                             ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "REGISTER", buttonForegroundColor: .red, buttonBackgroundColor: .white){
@@ -64,10 +101,10 @@ struct RegisterView: View {
                         })
                         
                     }
-                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .frame(width: geometry.size.width, height: 900)
                     
                 }
-                .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: UIScreen.main.bounds.size.height)
+                .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: 800)
             })
             
         }
@@ -80,6 +117,8 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
+            .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/396.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/903.0/*@END_MENU_TOKEN@*/))
+            .environment(\.sizeCategory, .extraExtraLarge)
     }
 }
 
