@@ -24,6 +24,10 @@ struct RegisterView: View {
             GeometryReader(content: { geometry in
                 ScrollView(.vertical, showsIndicators: false){
                     
+//                    NavigationView{
+//                        
+//                    }
+                    
                     VStack{
                         VStack(alignment: .center, spacing: nil, content: {
                             Spacer()
@@ -81,7 +85,7 @@ struct RegisterView: View {
                             .foregroundColor(.white)
                             .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
                             .onTapGesture(perform: {
-                                agreetermsAndConditions = !agreetermsAndConditions
+                                agreetermsAndConditions.toggle()
                             })
 
                             ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "REGISTER", buttonForegroundColor: .red, buttonBackgroundColor: .white){

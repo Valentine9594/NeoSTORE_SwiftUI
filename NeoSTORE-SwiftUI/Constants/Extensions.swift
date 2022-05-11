@@ -29,3 +29,9 @@ extension Color{
     }
 }
 
+extension UIApplication{
+    func endEditing(){
+        sendAction(#selector(getter: UIResponder.canResignFirstResponder), to: nil, from: nil, for: nil)
+        debugPrint("Ending editing")
+    }
+}

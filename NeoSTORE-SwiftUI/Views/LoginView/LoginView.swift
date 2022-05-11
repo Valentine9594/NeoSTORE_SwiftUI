@@ -84,13 +84,17 @@ struct LoginView: View {
                             
                         }
                         .frame(width: UIScreen.main.bounds.size.width, height: (UIScreen.main.bounds.size.height-geometry.safeAreaInsets.bottom-2)*0.95)
-                        .fixedSize()
                     }
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 })
                 
             }
+            .ignoresSafeArea(.keyboard, edges: .bottom)
             .clipped()
+            .onTapGesture {
+                UIApplication.shared.endEditing()
+            }
+
         }
         
     }
