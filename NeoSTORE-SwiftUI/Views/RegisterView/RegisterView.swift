@@ -83,15 +83,6 @@ struct RegisterView: View {
                             .onTapGesture(perform: {
                                 agreetermsAndConditions = !agreetermsAndConditions
                             })
-                            
-//                            Button(action: {
-//                                agreetermsAndConditions = !agreetermsAndConditions
-//                            }, label: {
-//                                Label("I AGREE THE TERMS AND CONDITIONS", image: agreetermsAndConditions ? "checked_icon" : "uncheck_icon")
-//                                    .frame(width: geometry.size.width, height: 50, alignment: .center)
-//                            })
-//                            .foregroundColor(.white)
-
 
                             ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "REGISTER", buttonForegroundColor: .red, buttonBackgroundColor: .white){
                                 debugPrint("Clicked REGISTER!!!")
