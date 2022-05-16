@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		922278CB282A42BF00BBB169 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922278CA282A42BF00BBB169 /* RegisterView.swift */; };
+		922AF6E8282CD936007E043D /* AdaptiveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */; };
 		926846A228240C7E000368F6 /* ConstantFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926846A128240C7E000368F6 /* ConstantFunctions.swift */; };
+		92AF396E282D37600053058B /* CustomAppNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF396D282D37600053058B /* CustomAppNavigationView.swift */; };
+		92AF3971282D3A870053058B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF3970282D3A870053058B /* HomeView.swift */; };
 		92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */; };
 		92F5555E2822531D00C68488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555D2822531D00C68488 /* ContentView.swift */; };
 		92F555602822532100C68488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F5555F2822532100C68488 /* Assets.xcassets */; };
@@ -18,11 +21,17 @@
 		92F555732822599400C68488 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F555722822599400C68488 /* LoginView.swift */; };
 		92F555752822B91700C68488 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F555742822B91700C68488 /* CustomButtons.swift */; };
 		92F555772822C0D300C68488 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F555762822C0D300C68488 /* Extensions.swift */; };
+		92FC569D282E8BCC00EB536A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC569C282E8BCC00EB536A /* PageViewController.swift */; };
+		92FC569F28321D7000EB536A /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC569E28321D7000EB536A /* PageView.swift */; };
+		92FC56A128327E9A00EB536A /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC56A028327E9A00EB536A /* PageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		922278CA282A42BF00BBB169 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveKeyboard.swift; sourceTree = "<group>"; };
 		926846A128240C7E000368F6 /* ConstantFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantFunctions.swift; sourceTree = "<group>"; };
+		92AF396D282D37600053058B /* CustomAppNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppNavigationView.swift; sourceTree = "<group>"; };
+		92AF3970282D3A870053058B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		92F555582822531D00C68488 /* NeoSTORE-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeoSTORE-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSTORE_SwiftUIApp.swift; sourceTree = "<group>"; };
 		92F5555D2822531D00C68488 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +43,9 @@
 		92F555722822599400C68488 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		92F555742822B91700C68488 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		92F555762822C0D300C68488 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		92FC569C282E8BCC00EB536A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		92FC569E28321D7000EB536A /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		92FC56A028327E9A00EB536A /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,17 @@
 				922278CA282A42BF00BBB169 /* RegisterView.swift */,
 			);
 			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		92AF396F282D3A630053058B /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				92AF3970282D3A870053058B /* HomeView.swift */,
+				92FC569C282E8BCC00EB536A /* PageViewController.swift */,
+				92FC569E28321D7000EB536A /* PageView.swift */,
+				92FC56A028327E9A00EB536A /* PageControl.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 		92F5554F2822531D00C68488 = {
@@ -108,6 +131,7 @@
 				92F555742822B91700C68488 /* CustomButtons.swift */,
 				92F555762822C0D300C68488 /* Extensions.swift */,
 				926846A128240C7E000368F6 /* ConstantFunctions.swift */,
+				922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -115,9 +139,11 @@
 		92F5556C282256E000C68488 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				92AF396F282D3A630053058B /* HomeView */,
 				922278C9282A429E00BBB169 /* RegisterView */,
 				92F555712822593A00C68488 /* LoginView */,
 				92F5555D2822531D00C68488 /* ContentView.swift */,
+				92AF396D282D37600053058B /* CustomAppNavigationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,10 +230,16 @@
 				92F5555E2822531D00C68488 /* ContentView.swift in Sources */,
 				92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */,
 				92F555732822599400C68488 /* LoginView.swift in Sources */,
+				92FC56A128327E9A00EB536A /* PageControl.swift in Sources */,
 				92F555752822B91700C68488 /* CustomButtons.swift in Sources */,
+				92FC569D282E8BCC00EB536A /* PageViewController.swift in Sources */,
 				92F555702822580E00C68488 /* CustomTextfields.swift in Sources */,
 				926846A228240C7E000368F6 /* ConstantFunctions.swift in Sources */,
+				922AF6E8282CD936007E043D /* AdaptiveKeyboard.swift in Sources */,
+				92AF3971282D3A870053058B /* HomeView.swift in Sources */,
+				92AF396E282D37600053058B /* CustomAppNavigationView.swift in Sources */,
 				92F555772822C0D300C68488 /* Extensions.swift in Sources */,
+				92FC569F28321D7000EB536A /* PageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

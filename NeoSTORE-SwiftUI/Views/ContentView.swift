@@ -10,24 +10,14 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 
-        GeometryReader(content: { geometry in
-            ScrollView(.vertical, showsIndicators: false, content: {
-                VStack{
-                    Text("Top")
-                    Spacer()
-                    HStack{
-                        Text("Leading")
-                        Spacer()
-                        Text("Trailing")
-                    }
-                    Spacer()
-                    Text("Bottom")
-                }
-                .frame(width: geometry.size.width, height: geometry.size.height)
-            })
-        })
-        
-        
+        NavigationView{
+            NavigationLink(destination: Text("Second VIEW")) {
+                Image(systemName: "person.fill")
+            }
+            .navigationTitle("Regis")
+            
+
+        }
     }
 }
 
