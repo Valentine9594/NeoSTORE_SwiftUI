@@ -8,31 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
-    var carousel: CarouselImages
+    @State private var currentPage: Int = 0
+    private let carouselImages = ["slider_img1", "slider_img2", "slider_img3", "slider_img4"]
     
     var body: some View {
+       
         VStack(alignment: .center, spacing: 10){
-            Color.white
-           
-            carousel.image
-                .resizable()
-                .aspectRatio(3/2, contentMode: .fit)
-
-            Text("Hello")
+            CarouselView(carouselImages: carouselImages, currentPage: $currentPage)
+                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height * 0.35)
+            
+            LazyHGrid(rows: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                ForEach((0..<ProductCategories.allCases.count), id: \.self) { index in
+                    Image(ProductCategories(rawValue: index+1)?.imageName ?? "chairsicon")
+                        .resizable()
+                        .onTapGesture {
+                            debugPrint("Clicked: \(ProductCategories(rawValue: index + 1)?.description ?? "Nothing")")
+                        }
+                }
+            }
         }
     }
-    
 }
+    
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let carouselArray = [CarouselImages(name: "slider_img1", imageName: "slider_img1"), CarouselImages(name: "slider_img2", imageName: "slider_img2"), CarouselImages(name: "slider_img3", imageName: "slider_img3"), CarouselImages(name: "slider_img4", imageName: "slider_img4")]
-        HomeView(carousel: carouselArray[0])
-            .environment(\.sizeCategory, .extraExtraLarge)
-            .previewLayout(.fixed(width: 396.0, height: /*@START_MENU_TOKEN@*/800.0/*@END_MENU_TOKEN@*/))            
+        HomeView()
     }
 }
-
-
-
-
