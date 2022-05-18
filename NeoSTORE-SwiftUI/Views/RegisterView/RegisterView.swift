@@ -23,12 +23,8 @@ struct RegisterView: View {
             
             GeometryReader(content: { geometry in
                 ScrollView(.vertical, showsIndicators: false){
-                    
-//                    NavigationView{
-//                        
-//                    }
-                    
                     VStack{
+                        
                         VStack(alignment: .center, spacing: nil, content: {
                             Spacer()
                             
@@ -104,8 +100,10 @@ struct RegisterView: View {
             })
             
         }
+        .navigationTitle(Text("Register"))
+        .navigationBarTitleDisplayMode(.inline)
+//        .navigationBarBackButtonHidden(true)
         .clipped()
-        
     }
     
 }

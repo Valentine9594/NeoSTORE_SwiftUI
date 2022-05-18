@@ -5,29 +5,38 @@
 //  Created by neosoft on 04/05/22.
 //
 
+import Combine
 import SwiftUI
 
 struct LoginView: View {
     @State private var usernameTextfield: String = ""
     @State private var passwordTextfield: String = ""
-    @State private var toNavigate: Bool = false
+    @State private var toNavigateRegister: Bool = false
+    @State private var toNavigateHome: Bool = false
+    @State private var keyboardHeight: CGFloat = 0
     
     var body: some View {
         NavigationView{
             ZStack(alignment: .center){
                 Color.appRed
                 
-                GeometryReader(content: { geometry in
+//                GeometryReader(content: { geometry in
                     ScrollView(.vertical, showsIndicators: false){
                         
                         VStack{
                             VStack(alignment: .center, spacing: nil, content: {
                                 NavigationLink(
                                     "", destination: RegisterView(),
-                                    isActive: $toNavigate)
+                                    isActive: $toNavigateRegister)
+                                    .navigationBarHidden(true)
+                                
+                                NavigationLink(
+                                    "", destination: HomeView(),
+                                    isActive: $toNavigateHome)
                                     .navigationBarHidden(true)
                                 
                                 Spacer()
+//                                    .frame( minHeight: 50, maxHeight: 150)
                                 
                                 Text("NeoSTORE")
                                     .font(.custom("", size: 45))
@@ -45,6 +54,7 @@ struct LoginView: View {
 
                                 ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
                                     debugPrint("Clicked Login!!!")
+                                    toNavigateHome = true
                                 }
                                 
                                 Text("Forgot Password?")
@@ -57,8 +67,9 @@ struct LoginView: View {
                                     }
                                 
                                 Spacer()
+//                                    .frame( minHeight: 50, maxHeight: 150)
                                 
-                                HStack(alignment: .center, spacing: 33, content: {
+                                LazyHStack(alignment: .center, spacing: 33, content: {
                                     Text("DON'T HAVE AN ACCOUNT?")
                                         .font(.title3)
                                         .foregroundColor(.white)
@@ -74,7 +85,7 @@ struct LoginView: View {
                                         .frame(width: 46, height: 46, alignment: .trailing)
                                         .onTapGesture {
                                             debugPrint("Tapped Plus Icon!!")
-                                            toNavigate = true
+                                            toNavigateRegister = true
                                         }
 
                                 })
@@ -83,17 +94,18 @@ struct LoginView: View {
                             })
                             
                         }
-                        .frame(width: UIScreen.main.bounds.size.width, height: (UIScreen.main.bounds.size.height-geometry.safeAreaInsets.bottom-2)*0.95)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.9)
+//                        -geometry.safeAreaInsets.bottom
                     }
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                })
+                    .frame(width: UIScreen.main.bounds.width, height: .none)
+//                })
                 
             }
-            .ignoresSafeArea(.keyboard, edges: .bottom)
+//            .keyboardAdaptive()
             .clipped()
-            .onTapGesture {
-                UIApplication.shared.endEditing()
-            }
+//            .onTapGesture {
+//                UIApplication.shared.endEditing()
+//            }
 
         }
         
