@@ -17,7 +17,8 @@ struct CarouselView: View {
             ForEach(0..<carouselImages.count, id: \.self) {
                 Image(carouselImages[$0])
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(3/2, contentMode: .fill)
+                    .clipped()
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
