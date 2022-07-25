@@ -76,7 +76,7 @@ struct LoginView: View {
                                         .bold()
                                         .frame(width: .none, height: .none, alignment: .leading)
                                     
-                                    Image("plus")
+                                    Image("Plus")
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
