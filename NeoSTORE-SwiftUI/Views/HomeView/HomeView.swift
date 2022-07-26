@@ -9,12 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var currentPage: Int = 0
+    @State private var toNavigateProductListing: Bool = false
     private let carouselImages = ["slider_img1", "slider_img2", "slider_img3", "slider_img4"]
     private let homeViewGrid = [GridItem(.flexible(minimum: (UIScreen.main.bounds.width/2)-33), spacing: 12), GridItem(.flexible(minimum: (UIScreen.main.bounds.width/2)-33), spacing: 12)]
     
     var body: some View {
         VStack(spacing: 0){
-            NavigationBarView()
+            NavigationBarView(leftNavigationButton: .sideMenu, rightNavigationButton: .search, leftNavigationButtonAction: {
+                debugPrint("clicked home")
+            }, rightNavigationButtonAction: {
+                debugPrint("clicked home")
+            })
+            
+            NavigationLink(
+                "", destination: ProductListingView(),
+                isActive: $toNavigateProductListing)
+                .navigationBarHidden(true)
             
             CarouselView(carouselImages: carouselImages, currentPage: $currentPage)
                 .padding(.bottom, 15)
@@ -26,7 +36,7 @@ struct HomeView: View {
                         .resizable()
                         .aspectRatio(1, contentMode: .fill)
                         .onTapGesture {
-                            debugPrint("Clicked \(index): \(ProductCategories(rawValue: index)?.description ?? "Nothing")")
+                            toNavigateProductListing = true
                         }
                 }
             }

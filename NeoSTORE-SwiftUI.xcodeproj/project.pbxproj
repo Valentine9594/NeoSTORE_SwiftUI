@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1838B50F288EC1EF00541AAE /* ProductListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838B50E288EC1EF00541AAE /* ProductListingView.swift */; };
 		1838B512288EC6E100541AAE /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838B511288EC6E100541AAE /* NavigationBarView.swift */; };
+		1855F204288FCFF100D9D55B /* ProductModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855F203288FCFF100D9D55B /* ProductModels.swift */; };
+		1855F2062890020900D9D55B /* ProductListingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855F2052890020900D9D55B /* ProductListingCellView.swift */; };
 		922278CB282A42BF00BBB169 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922278CA282A42BF00BBB169 /* RegisterView.swift */; };
 		922AF6E8282CD936007E043D /* AdaptiveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */; };
 		926846A228240C7E000368F6 /* ConstantFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926846A128240C7E000368F6 /* ConstantFunctions.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		1838B50E288EC1EF00541AAE /* ProductListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingView.swift; sourceTree = "<group>"; };
 		1838B511288EC6E100541AAE /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		1855F203288FCFF100D9D55B /* ProductModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModels.swift; sourceTree = "<group>"; };
+		1855F2052890020900D9D55B /* ProductListingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingCellView.swift; sourceTree = "<group>"; };
 		922278CA282A42BF00BBB169 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveKeyboard.swift; sourceTree = "<group>"; };
 		926846A128240C7E000368F6 /* ConstantFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantFunctions.swift; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				1838B50E288EC1EF00541AAE /* ProductListingView.swift */,
+				1855F2052890020900D9D55B /* ProductListingCellView.swift */,
 			);
 			path = ProductListingView;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				92F5556D282257E100C68488 /* Models.swift */,
+				1855F203288FCFF100D9D55B /* ProductModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,7 +255,9 @@
 				92F5555E2822531D00C68488 /* ContentView.swift in Sources */,
 				92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */,
 				92FC56A52833E10200EB536A /* CarouselView.swift in Sources */,
+				1855F2062890020900D9D55B /* ProductListingCellView.swift in Sources */,
 				92F555732822599400C68488 /* LoginView.swift in Sources */,
+				1855F204288FCFF100D9D55B /* ProductModels.swift in Sources */,
 				92F555752822B91700C68488 /* CustomButtons.swift in Sources */,
 				92FC56A32833B23700EB536A /* Constants.swift in Sources */,
 				92F555702822580E00C68488 /* CustomTextfields.swift in Sources */,
