@@ -6,28 +6,36 @@
 //
 
 import Foundation
-import CoreData
 
-enum ProductCategories: Int, CaseIterable{
+enum ProductCategories: Int, CaseIterable {
     case table = 1
     case sofa = 2
     case cupboard = 3
     case chair = 4
     
-    var description: String{
-        switch self{
+    var description: String {
+        switch self {
             case .table:
-                return "table"
+                return "Tables"
             case .chair:
-                return "chairs"
+                return "Chairs"
             case .sofa:
-                return "sofa"
+                return "Sofas"
             case .cupboard:
-                return "cupboard"
+                return "Cupboards"
         }
     }
     
-    var imageName: String{
-        description + "icon"
+    var imageName: String {
+        switch self {
+            case .table:
+                return AppIcons.ProductCategoryIcons.table
+            case .chair:
+                return AppIcons.ProductCategoryIcons.chair
+            case .sofa:
+                return AppIcons.ProductCategoryIcons.sofa
+            case .cupboard:
+                return AppIcons.ProductCategoryIcons.cupboard
+        }
     }
 }

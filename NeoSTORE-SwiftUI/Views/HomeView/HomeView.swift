@@ -10,19 +10,20 @@ import SwiftUI
 struct HomeView: View {
     @State private var currentPage: Int = 0
     @State private var toNavigateProductListing: Bool = false
+    @State private var productCategory: ProductCategories = .table
     private let carouselImages = ["slider_img1", "slider_img2", "slider_img3", "slider_img4"]
     private let homeViewGrid = [GridItem(.flexible(minimum: (UIScreen.main.bounds.width/2)-33), spacing: 12), GridItem(.flexible(minimum: (UIScreen.main.bounds.width/2)-33), spacing: 12)]
     
     var body: some View {
         VStack(spacing: 0){
-            NavigationBarView(leftNavigationButton: .sideMenu, rightNavigationButton: .search, leftNavigationButtonAction: {
+            NavigationBarView(title: "NeoSTORE", leftNavigationButton: .sideMenu, rightNavigationButton: .search, leftNavigationButtonAction: {
                 debugPrint("clicked home")
             }, rightNavigationButtonAction: {
                 debugPrint("clicked home")
             })
             
             NavigationLink(
-                "", destination: ProductListingView(),
+                "", destination: ProductListingView(productCategory: productCategory),
                 isActive: $toNavigateProductListing)
                 .navigationBarHidden(true)
             
@@ -36,6 +37,7 @@ struct HomeView: View {
                         .resizable()
                         .aspectRatio(1, contentMode: .fill)
                         .onTapGesture {
+                            productCategory = ProductCategories(rawValue: index) ?? .table
                             toNavigateProductListing = true
                         }
                 }

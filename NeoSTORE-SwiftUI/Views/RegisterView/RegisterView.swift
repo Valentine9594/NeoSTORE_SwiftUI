@@ -35,15 +35,15 @@ struct RegisterView: View {
                                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
                             
                             VStack(alignment: .center, spacing: 14, content: {
-                                TextFieldWithImage(placeholder: "First Name", imageName: "username_icon", text: $firstnameText)
+                                TextFieldWithImage(placeholder: "First Name", imageName: AppIcons.UserProfileIcons.username, text: $firstnameText)
                                 
-                                TextFieldWithImage(placeholder: "Last Name", imageName: "username_icon", text: $lastnameText)
+                                TextFieldWithImage(placeholder: "Last Name", imageName: AppIcons.UserProfileIcons.username, text: $lastnameText)
                                 
-                                TextFieldWithImage(placeholder: "Email", imageName: "email_icon", text: $emailText)
+                                TextFieldWithImage(placeholder: "Email", imageName: AppIcons.UserProfileIcons.email, text: $emailText)
                                 
-                                SecureFieldWithImage(placeholder: "Password", imageName: "cpassword_icon", text: $passwordText)
+                                SecureFieldWithImage(placeholder: "Password", imageName: AppIcons.UserProfileIcons.passwordUnlocked, text: $passwordText)
                                 
-                                SecureFieldWithImage(placeholder: "Confirm Password", imageName: "password_icon", text: $confirmPasswordText)
+                                SecureFieldWithImage(placeholder: "Confirm Password", imageName: AppIcons.UserProfileIcons.passwordLocked, text: $confirmPasswordText)
                                 
                                 HStack(alignment: .center, spacing: 5, content: {
                                     Text("Gender:")
@@ -54,7 +54,7 @@ struct RegisterView: View {
                                     Button(action: {
                                         genderText = "Male"
                                     }, label: {
-                                        Label("Male", image: genderText == "Male" ? "chky" : "chkn")
+                                        Label("Male", image: genderText == "Male" ? AppIcons.UserProfileIcons.checkYes : AppIcons.UserProfileIcons.checkNo)
                                     })
                                     
                                     Spacer()
@@ -62,19 +62,19 @@ struct RegisterView: View {
                                     Button(action: {
                                         genderText = "Female"
                                     }, label: {
-                                        Label("Female", image: genderText == "Female" ? "chky" : "chkn")
+                                        Label("Female", image: genderText == "Female" ? AppIcons.UserProfileIcons.checkYes : AppIcons.UserProfileIcons.checkNo)
                                     })
                                 })
                                 .foregroundColor(.white)
                                 .padding(8)
                                 
-                                TextFieldWithImage(placeholder: "Phone Number", imageName: "cellphone_icon", text: $phoneText)
+                                TextFieldWithImage(placeholder: "Phone Number", imageName: AppIcons.UserProfileIcons.phone, text: $phoneText)
                       
                             })
                             .padding(EdgeInsets(top: 0, leading: 33, bottom: 16, trailing: 33))
                             
                             HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8, content: {
-                                Image(agreetermsAndConditions ? "checked_icon" : "uncheck_icon")
+                                Image(agreetermsAndConditions ? AppIcons.UserProfileIcons.checked : AppIcons.UserProfileIcons.unchecked)
                                 
                                 Text("I AGREE THE") + Text("TERMS AND CONDITIONS").underline()
                             })

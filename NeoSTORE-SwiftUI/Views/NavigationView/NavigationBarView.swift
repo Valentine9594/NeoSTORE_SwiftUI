@@ -7,35 +7,29 @@
 
 import SwiftUI
 
-enum LeftNavigationButton {
+enum NavigationButtonItem {
     case sideMenu
     case back
-    
-    var iconName: String {
-        switch self {
-            case .sideMenu: return "menu_icon"
-            case .back: return "back_icon"
-        }
-    }
-}
-
-enum RightNavigationButton {
     case search
     case addNew
     
     var iconName: String {
         switch self {
-            case .search: return "search_icon"
-            case .addNew: return "Plus"
+            case .sideMenu: return AppIcons.NavigationIcons.menu
+            case .back: return AppIcons.NavigationIcons.back
+            case .search: return AppIcons.NavigationIcons.search
+            case .addNew: return AppIcons.NavigationIcons.add
         }
     }
 }
 
 struct NavigationBarView: View {
-    let leftNavigationButton: LeftNavigationButton
-    let rightNavigationButton: RightNavigationButton
+    let title: String
+    let leftNavigationButton: NavigationButtonItem
+    let rightNavigationButton: NavigationButtonItem
     let leftNavigationButtonAction: (() -> Void)?
     let rightNavigationButtonAction: (() -> Void)?
+    let screenHeight = UIScreen.main.bounds.size.height * 0.06
     
     var body: some View {
         HStack{
@@ -45,15 +39,15 @@ struct NavigationBarView: View {
                 Image(leftNavigationButton.iconName)
             }
             .padding(.leading, 8)
-            .frame(height: UIScreen.main.bounds.size.height*0.08)
+            .frame(height: screenHeight)
             
             Spacer()
             
-            Text("NeoSTORE")
+            Text(title)
                 .font(.largeTitle)
                 .foregroundColor(.white)
                 .padding()
-                .frame(height: UIScreen.main.bounds.height*0.08)
+                .frame(height: screenHeight)
             
             Spacer()
             
@@ -63,9 +57,9 @@ struct NavigationBarView: View {
                 Image(rightNavigationButton.iconName)
             }
             .padding(.trailing, 8)
-            .frame(height: UIScreen.main.bounds.height*0.08)
+            .frame(height: screenHeight)
         }
-        .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.height*0.08)
+        .frame(width: UIScreen.main.bounds.size.width, height: screenHeight)
         .background(Color.appRed)
     }
 }

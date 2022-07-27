@@ -9,37 +9,39 @@ import SwiftUI
 
 struct ProductListCellView: View {
     var item: ProductModel
+    private let productImageSide = UIScreen.main.bounds.width / 4
     
     var body: some View {
-        HStack {
-            Image("chairsicon")
-                .resizable()
-                .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width/3, alignment: .center)
-            
-            VStack(alignment: .leading) {
-                Text(item.name ?? "")
-                Spacer()
-                Text(item.category ?? "")
-                Spacer()
-                HStack {
-                    Text(item.description ?? "")
+        VStack {
+            HStack {
+                Image(AppIcons.ProductCategoryIcons.cupboard)
+                    .resizable()
+                    .frame(width: productImageSide, height: productImageSide, alignment: .center)
+                
+                VStack(alignment: .leading) {
+                    Text(item.name ?? "")
                     Spacer()
-                    HStack(spacing: 0) {
-                        Image("star_uncheck")
-                            .resizable()
-                        Image("star_uncheck")
-                            .resizable()
-                        Image("star_uncheck")
-                            .resizable()
-                        Image("star_uncheck")
-                            .resizable()
-                        Image("star_uncheck")
-                            .resizable()
+                    Text(item.category ?? "")
+                    Spacer()
+                    HStack {
+                        Text(item.description ?? "")
+                        Spacer()
+                        HStack(spacing: 0) {
+                            Image(AppIcons.RatingIcons.starUnrated)
+                                .resizable()
+                            Image(AppIcons.RatingIcons.starUnrated)
+                                .resizable()
+                            Image(AppIcons.RatingIcons.starUnrated)
+                                .resizable()
+                            Image(AppIcons.RatingIcons.starUnrated)
+                                .resizable()
+                            Image(AppIcons.RatingIcons.starUnrated)
+                                .resizable()
+                        }
+                        .frame(width: 100, height: 20)
                     }
-                    .frame(width: 100, height: 20)
                 }
             }
         }
-        .padding(5)
     }
 }
