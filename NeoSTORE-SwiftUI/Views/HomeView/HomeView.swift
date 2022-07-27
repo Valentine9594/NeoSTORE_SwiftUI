@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(\.presentationMode) var presentation
     @State private var currentPage: Int = 0
     @State private var toNavigateProductListing: Bool = false
     @State private var productCategory: ProductCategories = .table
@@ -18,6 +19,7 @@ struct HomeView: View {
         VStack(spacing: 0){
             NavigationBarView(title: "NeoSTORE", leftNavigationButton: .sideMenu, rightNavigationButton: .search, leftNavigationButtonAction: {
                 debugPrint("clicked home")
+                self.presentation.wrappedValue.dismiss()
             }, rightNavigationButtonAction: {
                 debugPrint("clicked home")
             })

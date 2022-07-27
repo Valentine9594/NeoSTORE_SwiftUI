@@ -26,6 +26,19 @@ enum ProductCategories: Int, CaseIterable {
         }
     }
     
+    var id: Int {
+        switch self {
+            case .table:
+                return 1
+            case .sofa:
+                return 2
+            case .cupboard:
+                return 3
+            case .chair:
+                return 4
+        }
+    }
+    
     var imageName: String {
         switch self {
             case .table:

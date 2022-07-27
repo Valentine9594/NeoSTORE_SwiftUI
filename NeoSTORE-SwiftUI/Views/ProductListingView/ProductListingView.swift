@@ -14,7 +14,6 @@ struct ProductListingView: View {
     
     init(productCategory: ProductCategories) {
         self.productCategory = productCategory
-//        setupCompletionHandlers()
     }
     
     var body: some View {
@@ -34,20 +33,6 @@ struct ProductListingView: View {
         }
         .navigationBarHidden(true)
     }
-    
-    func leftNavigationButtonAction() {
-        self.presentation.wrappedValue.dismiss()
-    }
-    
-//    private mutating func setupCompletionHandlers() {
-//        self.leftNavigationButtonCompletionHandler = {
-//            self.presentation.wrappedValue.dismiss()
-//        }
-//
-//        self.rightNavigationButtonCompletionHandler = {
-//
-//        }
-//    }
 }
 
 struct ProductListingView_Previews: PreviewProvider {

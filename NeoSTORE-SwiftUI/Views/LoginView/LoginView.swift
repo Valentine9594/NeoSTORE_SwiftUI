@@ -56,6 +56,7 @@ struct LoginView: View {
                                     debugPrint("Clicked Login!!!")
                                     toNavigateHome = true
                                 }
+                                .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
                                 
                                 Text("Forgot Password?")
                                     .bold()
