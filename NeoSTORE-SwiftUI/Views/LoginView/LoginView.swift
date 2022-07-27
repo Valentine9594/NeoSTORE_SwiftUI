@@ -45,9 +45,9 @@ struct LoginView: View {
                                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
                                 
                                 VStack(alignment: .center, spacing: 16, content: {
-                                    TextFieldWithImage(placeholder: "Username", imageName: "username_icon", text: $usernameTextfield)
+                                    TextFieldWithImage(placeholder: "Username", imageName: AppIcons.UserProfileIcons.username, text: $usernameTextfield)
                                     
-                                    SecureFieldWithImage(placeholder: "Password", imageName: "password_icon", text: $passwordTextfield)
+                                    SecureFieldWithImage(placeholder: "Password", imageName: AppIcons.UserProfileIcons.passwordLocked, text: $passwordTextfield)
                           
                                 })
                                 .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
@@ -76,7 +76,7 @@ struct LoginView: View {
                                         .bold()
                                         .frame(width: .none, height: .none, alignment: .leading)
                                     
-                                    Image("Plus")
+                                    Image("plus")
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
