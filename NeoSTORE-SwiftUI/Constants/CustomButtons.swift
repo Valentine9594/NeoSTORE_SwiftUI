@@ -18,13 +18,12 @@ struct ButtonWithForegroundAndBackgroundColorWithText: View {
             buttonAction?()
         }, label: {
             Text(buttonTitle)
-                .font(.custom("", size: 22))
                 .bold()
+                .font(.custom("", size: 22))
+                .frame(maxWidth: .infinity, minHeight: 47)
         })
-        .frame(maxWidth: .infinity, maxHeight: 48)
         .foregroundColor(buttonForegroundColor)
         .background(buttonBackgroundColor)
         .cornerRadius(7)
-        .padding(EdgeInsets(top: 33, leading: 33, bottom: 21, trailing: 33))
     }
 }
