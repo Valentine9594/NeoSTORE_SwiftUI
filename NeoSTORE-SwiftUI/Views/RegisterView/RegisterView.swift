@@ -23,16 +23,12 @@ struct RegisterView: View {
             
             GeometryReader(content: { geometry in
                 ScrollView(.vertical, showsIndicators: false){
-                    VStack{
-                        
-                        VStack(alignment: .center, spacing: nil, content: {
+//                    VStack{
+//
+                        LazyVStack(alignment: .center, spacing: nil, content: {
                             Spacer()
                             
-                            Text("NeoSTORE")
-                                .font(.custom("", size: 45))
-                                .foregroundColor(.white)
-                                .bold()
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
+                            AppTitleView()
                             
                             VStack(alignment: .center, spacing: 14, content: {
                                 TextFieldWithImage(placeholder: "First Name", imageName: AppIcons.UserProfileIcons.username, text: $firstnameText)
@@ -76,7 +72,7 @@ struct RegisterView: View {
                             HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8, content: {
                                 Image(agreetermsAndConditions ? AppIcons.UserProfileIcons.checked : AppIcons.UserProfileIcons.unchecked)
                                 
-                                Text("I AGREE THE") + Text("TERMS AND CONDITIONS").underline()
+                                Text("I AGREE ") + Text("THE TERMS AND CONDITIONS").underline()
                             })
                             .foregroundColor(.white)
                             .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
@@ -87,13 +83,14 @@ struct RegisterView: View {
                             ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "REGISTER", buttonForegroundColor: .red, buttonBackgroundColor: .white){
                                 debugPrint("Clicked REGISTER!!!")
                             }
+                            .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
                                                         
                             Spacer()
 
                         })
                         
-                    }
-                    .frame(width: geometry.size.width, height: 800)
+//                    }
+//                    .frame(width: geometry.size.width, height: 800)
                     
                 }
                 .frame(maxWidth: UIScreen.main.bounds.size.width, maxHeight: 800)
@@ -116,6 +113,3 @@ struct RegisterView_Previews: PreviewProvider {
             
     }
 }
-
-
-

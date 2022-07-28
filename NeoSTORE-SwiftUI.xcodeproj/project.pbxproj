@@ -11,6 +11,7 @@
 		1838B512288EC6E100541AAE /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838B511288EC6E100541AAE /* NavigationBarView.swift */; };
 		1855F204288FCFF100D9D55B /* ProductModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855F203288FCFF100D9D55B /* ProductModels.swift */; };
 		1855F2062890020900D9D55B /* ProductListingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855F2052890020900D9D55B /* ProductListingCellView.swift */; };
+		18B6DBB92892511500F8B547 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6DBB82892511500F8B547 /* AppTitle.swift */; };
 		18DFB3BC2891071B004EA365 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DFB3BB2891071B004EA365 /* AppIcons.swift */; };
 		922278CB282A42BF00BBB169 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922278CA282A42BF00BBB169 /* RegisterView.swift */; };
 		922AF6E8282CD936007E043D /* AdaptiveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */; };
@@ -35,6 +36,7 @@
 		1838B511288EC6E100541AAE /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		1855F203288FCFF100D9D55B /* ProductModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModels.swift; sourceTree = "<group>"; };
 		1855F2052890020900D9D55B /* ProductListingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingCellView.swift; sourceTree = "<group>"; };
+		18B6DBB82892511500F8B547 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		18DFB3BB2891071B004EA365 /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
 		922278CA282A42BF00BBB169 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveKeyboard.swift; sourceTree = "<group>"; };
@@ -76,12 +78,13 @@
 			path = ProductListingView;
 			sourceTree = "<group>";
 		};
-		1838B510288EC6C800541AAE /* NavigationView */ = {
+		1838B510288EC6C800541AAE /* AppCommonViews */ = {
 			isa = PBXGroup;
 			children = (
 				1838B511288EC6E100541AAE /* NavigationBarView.swift */,
+				18B6DBB82892511500F8B547 /* AppTitle.swift */,
 			);
-			path = NavigationView;
+			path = AppCommonViews;
 			sourceTree = "<group>";
 		};
 		922278C9282A429E00BBB169 /* RegisterView */ = {
@@ -165,7 +168,7 @@
 		92F5556C282256E000C68488 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1838B510288EC6C800541AAE /* NavigationView */,
+				1838B510288EC6C800541AAE /* AppCommonViews */,
 				1838B50D288EC1C400541AAE /* ProductListingView */,
 				92AF396F282D3A630053058B /* HomeView */,
 				922278C9282A429E00BBB169 /* RegisterView */,
@@ -257,6 +260,7 @@
 				92F5556E282257E100C68488 /* Models.swift in Sources */,
 				92F5555E2822531D00C68488 /* ContentView.swift in Sources */,
 				92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */,
+				18B6DBB92892511500F8B547 /* AppTitle.swift in Sources */,
 				92FC56A52833E10200EB536A /* CarouselView.swift in Sources */,
 				1855F2062890020900D9D55B /* ProductListingCellView.swift in Sources */,
 				18DFB3BC2891071B004EA365 /* AppIcons.swift in Sources */,
@@ -399,8 +403,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSTORE-SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 9LF24P7WQU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "NeoSTORE-SwiftUI/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -410,6 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "NeosoftTechnologies.NeoSTORE-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,8 +427,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NeoSTORE-SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 9LF24P7WQU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "NeoSTORE-SwiftUI/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -431,6 +440,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "NeosoftTechnologies.NeoSTORE-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

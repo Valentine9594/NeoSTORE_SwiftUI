@@ -38,11 +38,7 @@ struct LoginView: View {
                                 Spacer()
 //                                    .frame( minHeight: 50, maxHeight: 150)
                                 
-                                Text("NeoSTORE")
-                                    .font(.custom("", size: 45))
-                                    .foregroundColor(.white)
-                                    .bold()
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 49, trailing: 0))
+                                AppTitleView()
                                 
                                 VStack(alignment: .center, spacing: 16, content: {
                                     TextFieldWithImage(placeholder: "Username", imageName: AppIcons.UserProfileIcons.username, text: $usernameTextfield)
@@ -56,7 +52,7 @@ struct LoginView: View {
                                     debugPrint("Clicked Login!!!")
                                     toNavigateHome = true
                                 }
-                                .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
+                                .padding(EdgeInsets(top: 33, leading: 33, bottom: 0, trailing: 33))
                                 
                                 Text("Forgot Password?")
                                     .bold()

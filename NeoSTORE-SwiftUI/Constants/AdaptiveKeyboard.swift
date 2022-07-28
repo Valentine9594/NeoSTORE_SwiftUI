@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-struct KeyboardAdaptive: ViewModifier{
+struct KeyboardAdaptive: ViewModifier {
     @State private var keyboardHeight: CGFloat = 0
     
     func body(content: Content) -> some View {
