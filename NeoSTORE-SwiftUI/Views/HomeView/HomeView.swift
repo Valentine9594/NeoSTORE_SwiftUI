@@ -24,11 +24,6 @@ struct HomeView: View {
                 debugPrint("clicked home")
             })
             
-            NavigationLink(
-                "", destination: ProductListingView(productCategory: productCategory),
-                isActive: $toNavigateProductListing)
-                .navigationBarHidden(true)
-            
             CarouselView(carouselImages: carouselImages, currentPage: $currentPage)
                 .padding(.bottom, 15)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.35)
@@ -48,6 +43,11 @@ struct HomeView: View {
             .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
             
             Spacer()
+            
+            NavigationLink(
+                "", destination: ProductListingView(productCategory: productCategory),
+                isActive: $toNavigateProductListing)
+                .navigationBarHidden(true)
         }
         .frame(width: UIScreen.main.bounds.width, height: .none)
         .navigationBarHidden(true)

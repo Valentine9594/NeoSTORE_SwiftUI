@@ -23,7 +23,7 @@ struct LoginView: View {
 //                GeometryReader(content: { geometry in
                     ScrollView(.vertical, showsIndicators: false){
                         
-                        VStack{
+                        VStack {
                             VStack(alignment: .center, spacing: nil, content: {
                                 NavigationLink(
                                     "", destination: RegisterView(),
@@ -44,15 +44,15 @@ struct LoginView: View {
                                     TextFieldWithImage(placeholder: "Username", imageName: AppIcons.UserProfileIcons.username, text: $usernameTextfield)
                                     
                                     SecureFieldWithImage(placeholder: "Password", imageName: AppIcons.UserProfileIcons.passwordLocked, text: $passwordTextfield)
+                                    
+                                    ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
+                                        debugPrint("Clicked Login!!!")
+                                        toNavigateHome = true
+                                    }
+                                    .padding(.top, 16)
                           
                                 })
                                 .padding(EdgeInsets(top: 0, leading: 33, bottom: 0, trailing: 33))
-
-                                ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
-                                    debugPrint("Clicked Login!!!")
-                                    toNavigateHome = true
-                                }
-                                .padding(EdgeInsets(top: 33, leading: 33, bottom: 0, trailing: 33))
                                 
                                 Text("Forgot Password?")
                                     .bold()
@@ -89,7 +89,7 @@ struct LoginView: View {
                                 .frame(width: UIScreen.main.bounds.size.width, height: 50)
                                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                             })
-                            
+//                            frame
                         }
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.9)
 //                        -geometry.safeAreaInsets.bottom
