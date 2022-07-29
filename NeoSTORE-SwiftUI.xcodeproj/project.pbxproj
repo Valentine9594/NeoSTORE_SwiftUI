@@ -12,11 +12,11 @@
 		1855F204288FCFF100D9D55B /* ProductModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855F203288FCFF100D9D55B /* ProductModels.swift */; };
 		1855F2062890020900D9D55B /* ProductListingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855F2052890020900D9D55B /* ProductListingCellView.swift */; };
 		18B6DBB92892511500F8B547 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6DBB82892511500F8B547 /* AppTitle.swift */; };
+		18B6DBBD2892A5AA00F8B547 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6DBBC2892A5AA00F8B547 /* APIService.swift */; };
 		18DFB3BC2891071B004EA365 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DFB3BB2891071B004EA365 /* AppIcons.swift */; };
 		922278CB282A42BF00BBB169 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922278CA282A42BF00BBB169 /* RegisterView.swift */; };
 		922AF6E8282CD936007E043D /* AdaptiveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */; };
 		926846A228240C7E000368F6 /* ConstantFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926846A128240C7E000368F6 /* ConstantFunctions.swift */; };
-		92AF396E282D37600053058B /* CustomAppNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF396D282D37600053058B /* CustomAppNavigationView.swift */; };
 		92AF3971282D3A870053058B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF3970282D3A870053058B /* HomeView.swift */; };
 		92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */; };
 		92F5555E2822531D00C68488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5555D2822531D00C68488 /* ContentView.swift */; };
@@ -37,11 +37,11 @@
 		1855F203288FCFF100D9D55B /* ProductModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModels.swift; sourceTree = "<group>"; };
 		1855F2052890020900D9D55B /* ProductListingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingCellView.swift; sourceTree = "<group>"; };
 		18B6DBB82892511500F8B547 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
+		18B6DBBC2892A5AA00F8B547 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		18DFB3BB2891071B004EA365 /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
 		922278CA282A42BF00BBB169 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveKeyboard.swift; sourceTree = "<group>"; };
 		926846A128240C7E000368F6 /* ConstantFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantFunctions.swift; sourceTree = "<group>"; };
-		92AF396D282D37600053058B /* CustomAppNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppNavigationView.swift; sourceTree = "<group>"; };
 		92AF3970282D3A870053058B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		92F555582822531D00C68488 /* NeoSTORE-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeoSTORE-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F5555B2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoSTORE_SwiftUIApp.swift; sourceTree = "<group>"; };
@@ -85,6 +85,23 @@
 				18B6DBB82892511500F8B547 /* AppTitle.swift */,
 			);
 			path = AppCommonViews;
+			sourceTree = "<group>";
+		};
+		18B6DBBA2892A55500F8B547 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				92F5556D282257E100C68488 /* Models.swift */,
+				1855F203288FCFF100D9D55B /* ProductModels.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		18B6DBBB2892A58500F8B547 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				18B6DBBC2892A5AA00F8B547 /* APIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		922278C9282A429E00BBB169 /* RegisterView */ = {
@@ -145,8 +162,8 @@
 		92F5556A282256D100C68488 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				92F5556D282257E100C68488 /* Models.swift */,
-				1855F203288FCFF100D9D55B /* ProductModels.swift */,
+				18B6DBBB2892A58500F8B547 /* Services */,
+				18B6DBBA2892A55500F8B547 /* Entities */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,7 +191,6 @@
 				922278C9282A429E00BBB169 /* RegisterView */,
 				92F555712822593A00C68488 /* LoginView */,
 				92F5555D2822531D00C68488 /* ContentView.swift */,
-				92AF396D282D37600053058B /* CustomAppNavigationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +278,7 @@
 				92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */,
 				18B6DBB92892511500F8B547 /* AppTitle.swift in Sources */,
 				92FC56A52833E10200EB536A /* CarouselView.swift in Sources */,
+				18B6DBBD2892A5AA00F8B547 /* APIService.swift in Sources */,
 				1855F2062890020900D9D55B /* ProductListingCellView.swift in Sources */,
 				18DFB3BC2891071B004EA365 /* AppIcons.swift in Sources */,
 				92F555732822599400C68488 /* LoginView.swift in Sources */,
@@ -273,7 +290,6 @@
 				1838B512288EC6E100541AAE /* NavigationBarView.swift in Sources */,
 				922AF6E8282CD936007E043D /* AdaptiveKeyboard.swift in Sources */,
 				92AF3971282D3A870053058B /* HomeView.swift in Sources */,
-				92AF396E282D37600053058B /* CustomAppNavigationView.swift in Sources */,
 				1838B50F288EC1EF00541AAE /* ProductListingView.swift in Sources */,
 				92F555772822C0D300C68488 /* Extensions.swift in Sources */,
 			);
