@@ -37,22 +37,23 @@ public class APIManager {
         }
         
         let task = session.dataTask(with: request) { data, response, error in
-            guard error != nil else {
+            guard error == nil else {
+                completion(.failure(.somethingWentWrong))
+                return
+            }
+            
+            guard let data = data else {
                 completion(.failure(.somethingWentWrong))
                 return
             }
             
             guard let response = response as? HTTPURLResponse else { return }
-
-            guard let data = data else {
-                completion(.failure(.somethingWentWrong))
-                return
+            if response.statusCode == 200 {
+                completion(.success(data))
+            } else {
+                completion(.failure(.apiResponseError(responseData: data, statusCode: response.statusCode)))
             }
-
-            completion(.success(data))
-
         }
-        
         task.resume()
     }
 }

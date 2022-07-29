@@ -81,10 +81,11 @@ enum APIService {
     }
     
     var header: AnyDict? {
-        var headerDict = AnyDict()
+        var headerDict = [APILink.contentKey: APILink.contentValue]
         switch self {
             case .changePassword, .updateAccount, .addToCart, .getListCartItems, .editCart, .deleteCart, .getOrderList, .getOrderDetail, .getOrder:
-            headerDict = [APILink.contentKey: APILink.contentValue, APILink.accessToken: APILink.accessTokenValue]
+//                headerDict = [APILink.contentKey: APILink.contentValue, APILink.accessToken: APILink.accessTokenValue]
+                headerDict[APILink.accessToken] = APILink.accessTokenValue
             default:
                 break
         }
