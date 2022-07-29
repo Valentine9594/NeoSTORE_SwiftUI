@@ -6,9 +6,25 @@
 //
 
 import Foundation
+import SwiftUI
+
+enum HTTPMethod {
+    case get
+    case post
+    
+    var description: String {
+        switch self {
+            case .get:
+                return "GET"
+            case .post:
+                return "POST"
+        }
+    }
+}
 
 enum APIService {
     typealias AnyDict = [String: Any]
+    typealias StringDict = [String: String]
     
 //MARK: User related APIs
     case login(params: AnyDict)
@@ -34,45 +50,57 @@ enum APIService {
     case getOrderList
     case getOrderDetail
     
-    var method: String {
+    private struct APILink {
+        static let baseURL = "http://staging.php-dev.in:8844/trainingapp/api"
+        static let contentValue = "application/x-www-form-urlencoded"
+        static let contentKey = "Content-Type"
+        static let accessToken = "access_token"
+        static var accessTokenValue: String {
+//            Need to get access token from device storage
+            let optionalString: String? = ""
+            return optionalString ?? "NO_ACCESS_TOKEN"
+        }
+    }
+    
+    var method: HTTPMethod {
         switch self {
             case .fetchAccount, .getProductList, .getProductDetails, .getListCartItems, .getOrderList, .getOrderDetail:
-                return "GET"
+                return .get
             default:
-                return "POST"
+                return .post
         }
     }
     
     var params: AnyDict? {
         switch self {
-        case .login(let params):
-            return params
-        default:
-            return nil
-        }
-    }
-    
-    var header: AnyDict? {
-        switch self {
+            case .login(let params):
+                return params
             default:
                 return nil
         }
     }
     
-    var baseURL: String {
-        return "http://staging.php-dev.in:8844/trainingapp/api"
+    var header: AnyDict? {
+        var headerDict = AnyDict()
+        switch self {
+            case .changePassword, .updateAccount, .addToCart, .getListCartItems, .editCart, .deleteCart, .getOrderList, .getOrderDetail, .getOrder:
+            headerDict = [APILink.contentKey: APILink.contentValue, APILink.accessToken: APILink.accessTokenValue]
+            default:
+                break
+        }
+        return headerDict
     }
     
-    var urlPath: String {
-        var remainingURLPath = ""
+    var path: String {
+        var urlPath = APILink.baseURL
         switch self {
             case .login:
-                remainingURLPath = "/users/login"
-        case .register:
-                remainingURLPath = "users/register"
+                urlPath += "/users/login"
+            case .register:
+                urlPath += "/users/register"
             default:
-                remainingURLPath = ""
+                urlPath += ""
         }
-        return baseURL + remainingURLPath
+        return urlPath
     }
 }
