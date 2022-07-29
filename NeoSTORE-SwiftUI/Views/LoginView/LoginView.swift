@@ -14,6 +14,7 @@ struct LoginView: View {
     @State private var toNavigateRegister: Bool = false
     @State private var toNavigateHome: Bool = false
     @State private var keyboardHeight: CGFloat = 0
+    @State var loginViewModel: LoginViewModelType = LoginViewModel()
     
     var body: some View {
         NavigationView{
@@ -46,8 +47,12 @@ struct LoginView: View {
                                     SecureFieldWithImage(placeholder: "Password", imageName: AppIcons.UserProfileIcons.passwordLocked, text: $passwordTextfield)
                                     
                                     ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
+                                        
                                         debugPrint("Clicked Login!!!")
-                                        toNavigateHome = true
+                                        let didLogin = loginViewModel.login(email: usernameTextfield, password: passwordTextfield)
+                                        if didLogin {
+                                            toNavigateHome = true
+                                        }
                                     }
                                     .padding(.top, 16)
                           

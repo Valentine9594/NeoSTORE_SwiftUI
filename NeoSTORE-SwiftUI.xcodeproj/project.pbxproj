@@ -11,6 +11,10 @@
 		1838B512288EC6E100541AAE /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838B511288EC6E100541AAE /* NavigationBarView.swift */; };
 		1855F204288FCFF100D9D55B /* ProductModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855F203288FCFF100D9D55B /* ProductModels.swift */; };
 		1855F2062890020900D9D55B /* ProductListingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855F2052890020900D9D55B /* ProductListingCellView.swift */; };
+		1893BA1E2893B34500A3C9C7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893BA1D2893B34500A3C9C7 /* APIManager.swift */; };
+		1893BA202893B8CE00A3C9C7 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893BA1F2893B8CE00A3C9C7 /* AppError.swift */; };
+		1893BA222893CE7700A3C9C7 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893BA212893CE7700A3C9C7 /* JSONParser.swift */; };
+		1893BA242893E38000A3C9C7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1893BA232893E38000A3C9C7 /* LoginViewModel.swift */; };
 		18B6DBB92892511500F8B547 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6DBB82892511500F8B547 /* AppTitle.swift */; };
 		18B6DBBD2892A5AA00F8B547 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6DBBC2892A5AA00F8B547 /* APIService.swift */; };
 		18DFB3BC2891071B004EA365 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DFB3BB2891071B004EA365 /* AppIcons.swift */; };
@@ -36,6 +40,10 @@
 		1838B511288EC6E100541AAE /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		1855F203288FCFF100D9D55B /* ProductModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModels.swift; sourceTree = "<group>"; };
 		1855F2052890020900D9D55B /* ProductListingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingCellView.swift; sourceTree = "<group>"; };
+		1893BA1D2893B34500A3C9C7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		1893BA1F2893B8CE00A3C9C7 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		1893BA212893CE7700A3C9C7 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		1893BA232893E38000A3C9C7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18B6DBB82892511500F8B547 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		18B6DBBC2892A5AA00F8B547 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		18DFB3BB2891071B004EA365 /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				18B6DBBC2892A5AA00F8B547 /* APIService.swift */,
+				1893BA1D2893B34500A3C9C7 /* APIManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -178,6 +187,8 @@
 				922AF6E7282CD936007E043D /* AdaptiveKeyboard.swift */,
 				92FC56A22833B23700EB536A /* Constants.swift */,
 				18DFB3BB2891071B004EA365 /* AppIcons.swift */,
+				1893BA1F2893B8CE00A3C9C7 /* AppError.swift */,
+				1893BA212893CE7700A3C9C7 /* JSONParser.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				92F555722822599400C68488 /* LoginView.swift */,
+				1893BA232893E38000A3C9C7 /* LoginViewModel.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -276,9 +288,12 @@
 				92F5556E282257E100C68488 /* Models.swift in Sources */,
 				92F5555E2822531D00C68488 /* ContentView.swift in Sources */,
 				92F5555C2822531D00C68488 /* NeoSTORE_SwiftUIApp.swift in Sources */,
+				1893BA222893CE7700A3C9C7 /* JSONParser.swift in Sources */,
 				18B6DBB92892511500F8B547 /* AppTitle.swift in Sources */,
 				92FC56A52833E10200EB536A /* CarouselView.swift in Sources */,
+				1893BA1E2893B34500A3C9C7 /* APIManager.swift in Sources */,
 				18B6DBBD2892A5AA00F8B547 /* APIService.swift in Sources */,
+				1893BA202893B8CE00A3C9C7 /* AppError.swift in Sources */,
 				1855F2062890020900D9D55B /* ProductListingCellView.swift in Sources */,
 				18DFB3BC2891071B004EA365 /* AppIcons.swift in Sources */,
 				92F555732822599400C68488 /* LoginView.swift in Sources */,
@@ -289,6 +304,7 @@
 				926846A228240C7E000368F6 /* ConstantFunctions.swift in Sources */,
 				1838B512288EC6E100541AAE /* NavigationBarView.swift in Sources */,
 				922AF6E8282CD936007E043D /* AdaptiveKeyboard.swift in Sources */,
+				1893BA242893E38000A3C9C7 /* LoginViewModel.swift in Sources */,
 				92AF3971282D3A870053058B /* HomeView.swift in Sources */,
 				1838B50F288EC1EF00541AAE /* ProductListingView.swift in Sources */,
 				92F555772822C0D300C68488 /* Extensions.swift in Sources */,
