@@ -21,13 +21,13 @@ public class APIManager {
         
         if let params = serviceType.params {
             switch serviceType.method {
-                case .get:
+                case .post:
                     var requestComponents = URLComponents()
                     requestComponents.queryItems = params.map({ (key, value) in
                         URLQueryItem(name: key, value: "\(value)")
                     })
                     request.httpBody = requestComponents.query?.data(using: .utf8)
-                case .post:
+                case .get:
                     var requestComponents = URLComponents(string: serviceType.path)
                     requestComponents?.queryItems = params.map({ (key, value) in
                         URLQueryItem(name: key, value: "\(value)")

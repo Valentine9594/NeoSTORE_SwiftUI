@@ -42,6 +42,9 @@ struct LoginView: View {
                                 AppTitleView()
                                 
                                 VStack(alignment: .center, spacing: 16, content: {
+//                                    username = "rogers@gmail.com"
+//                                    password = "rogers@1234"
+                                    
                                     TextFieldWithImage(placeholder: "Username", imageName: AppIcons.UserProfileIcons.username, text: $usernameTextfield)
                                     
                                     SecureFieldWithImage(placeholder: "Password", imageName: AppIcons.UserProfileIcons.passwordLocked, text: $passwordTextfield)
@@ -49,10 +52,10 @@ struct LoginView: View {
                                     ButtonWithForegroundAndBackgroundColorWithText(buttonTitle: "LOGIN", buttonForegroundColor: .red, buttonBackgroundColor: .white){
                                         
                                         debugPrint("Clicked Login!!!")
-                                        let didLogin = loginViewModel.login(email: usernameTextfield, password: passwordTextfield)
-                                        if didLogin {
-                                            toNavigateHome = true
-                                        }
+                                        loginViewModel.login(email: usernameTextfield, password: passwordTextfield)
+//                                        if didLogin {
+//                                            toNavigateHome = true
+//                                        }
                                     }
                                     .padding(.top, 16)
                           
@@ -78,7 +81,7 @@ struct LoginView: View {
                                         .bold()
                                         .frame(width: .none, height: .none, alignment: .leading)
                                     
-                                    Image("plus")
+                                    Image(AppIcons.NavigationIcons.add)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()

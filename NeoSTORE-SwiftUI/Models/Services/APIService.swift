@@ -52,8 +52,9 @@ enum APIService {
     
     private struct APILink {
         static let baseURL = "http://staging.php-dev.in:8844/trainingapp/api"
-        static let contentValue = "application/x-www-form-urlencoded"
-        static let contentKey = "Content-Type"
+        static let contentValueURLEncoded = "application/x-www-form-urlencoded"
+        static let contentValueJSON = "application/json"
+        static let contentType = "Content-Type"
         static let accessToken = "access_token"
         static var accessTokenValue: String {
 //            Need to get access token from device storage
@@ -81,7 +82,7 @@ enum APIService {
     }
     
     var header: AnyDict? {
-        var headerDict = [APILink.contentKey: APILink.contentValue]
+        var headerDict = [APILink.contentType: APILink.contentValueJSON]
         switch self {
             case .changePassword, .updateAccount, .addToCart, .getListCartItems, .editCart, .deleteCart, .getOrderList, .getOrderDetail, .getOrder:
 //                headerDict = [APILink.contentKey: APILink.contentValue, APILink.accessToken: APILink.accessTokenValue]
