@@ -5,25 +5,31 @@
 //  Created by Apple on 29/07/22.
 //
 
-import Foundation
+import SwiftUI
 
-protocol LoginViewModelType {
-    func login(email: String, password: String)
-}
+//protocol LoginViewModelType {
+//    func login(email: String, password: String)
+//    var didLogin: Bool {get set}
+//    var loggedIn: Published<Bool> {get set}
+//}
 
-class LoginViewModel: LoginViewModelType {
+//final class LoginViewModel: LoginViewModelType {
+final class LoginViewModel: ObservableObject {
+    @Published var didLogin: Bool = false
+    
     func login(email: String, password: String) {
         let params = ["email": email, "password": password]
-        debugPrint("Params: \(params)")
         APIManager.shared.performRequest(serviceType: .login(params: params)) { result in
             switch result {
                 case .success(let data):
                     let dataString = String(data: data, encoding: .utf8)
+                    self.didLogin = true
                     debugPrint("API Response: \(String(describing: dataString))")
                 case .failure(let error):
-                    guard let errorData = error.errorData else { return }
-                    let jsonDecoded: APIFailureResponse? = JSONParser.decode(data: errorData)
-                    debugPrint("Error: \(jsonDecoded?.userMessage ?? "")")
+                    let jsonDecoded: APIFailureResponse? = JSONParser.shared.decode(data: error.errorData)
+                    let errorMessage = jsonDecoded?.message ?? error.description
+                    self.didLogin = false
+                    debugPrint("Error: \(errorMessage)")
             }
         }
     }

@@ -12,9 +12,8 @@ struct LoginView: View {
     @State private var usernameTextfield: String = ""
     @State private var passwordTextfield: String = ""
     @State private var toNavigateRegister: Bool = false
-    @State private var toNavigateHome: Bool = false
     @State private var keyboardHeight: CGFloat = 0
-    @State var loginViewModel: LoginViewModelType = LoginViewModel()
+    @ObservedObject var loginViewModel = LoginViewModel()
     
     var body: some View {
         NavigationView{
@@ -32,8 +31,7 @@ struct LoginView: View {
                                     .navigationBarHidden(true)
                                 
                                 NavigationLink(
-                                    "", destination: HomeView(),
-                                    isActive: $toNavigateHome)
+                                    "", destination: HomeView(), isActive: $loginViewModel.didLogin)
                                     .navigationBarHidden(true)
                                 
                                 Spacer()
@@ -53,9 +51,6 @@ struct LoginView: View {
                                         
                                         debugPrint("Clicked Login!!!")
                                         loginViewModel.login(email: usernameTextfield, password: passwordTextfield)
-//                                        if didLogin {
-//                                            toNavigateHome = true
-//                                        }
                                     }
                                     .padding(.top, 16)
                           
