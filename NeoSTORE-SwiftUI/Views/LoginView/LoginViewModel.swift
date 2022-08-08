@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 //protocol LoginViewModelType {
 //    func login(email: String, password: String)
@@ -16,22 +17,23 @@ import SwiftUI
 //final class LoginViewModel: LoginViewModelType {
 final class LoginViewModel: ObservableObject {
     @Published var didLogin: Bool = false
+    var subscriptions = Set<AnyCancellable>()
     
     func login(email: String, password: String) {
         let params = ["email": email, "password": password]
-        APIManager.shared.performRequest(serviceType: .login(params: params)) { result in
-            switch result {
-                case .success(let data):
-                    let dataString = String(data: data, encoding: .utf8)
-                    self.didLogin = true
-                    debugPrint("API Response: \(String(describing: dataString))")
+        APIManager.shared.performRequestWithCombine(serviceType: .login(params: params))
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print("Finished")
                 case .failure(let error):
-                    let jsonDecoded: APIFailureResponse? = JSONParser.shared.decode(data: error.errorData)
-                    let errorMessage = jsonDecoded?.message ?? error.description
-                    self.didLogin = false
-                    debugPrint("Error: \(errorMessage)")
+                    print(error.localizedDescription)
+                }
+            } receiveValue: { data in
+                print(String(data: data, encoding: .utf8) ?? "No Data")
             }
-        }
+            .store(in: &subscriptions)
+
     }
     
     

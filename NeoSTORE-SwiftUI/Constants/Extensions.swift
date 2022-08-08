@@ -13,19 +13,19 @@ extension Color{
     }
     
     @nonobjc static var appRed: Color {
-        return Color(red: 233/255, green: 28/255, blue: 26/255, opacity: 1)
+        return Color(red: 233/255, green: 28/255, blue: 26/255, opacity: 1.0)
     }
     
-    @nonobjc static var appGrey: UIColor{
-        return UIColor(red: 40/255, green: 39/255, blue: 39/255, alpha: 0.7)
+    @nonobjc static var appGrey: Color {
+        return Color(red: 40/255, green: 39/255, blue: 39/255, opacity: 0.7)
     }
     
-    @nonobjc static var appGreyFont: UIColor{
-        return UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1.0)
+    @nonobjc static var appGreyFont: Color {
+        return Color(red: 51/255, green: 51/255, blue: 51/255, opacity: 1.0)
     }
     
-    @nonobjc static var appBlackForMenuBar: UIColor{
-        return UIColor(red: 44/255, green: 43/255, blue: 43/255, alpha: 1.0)
+    @nonobjc static var appBlackForMenuBar: Color {
+        return Color(red: 44/255, green: 43/255, blue: 43/255, opacity: 1.0)
     }
 }
 

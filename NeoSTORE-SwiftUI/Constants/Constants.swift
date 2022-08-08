@@ -10,17 +10,17 @@ import Foundation
 enum ProductCategories: Int, CaseIterable {
     case table = 1
     case sofa = 2
-    case cupboard = 3
-    case chair = 4
+    case chair = 3
+    case cupboard = 4
     
     var description: String {
         switch self {
             case .table:
                 return "Tables"
-            case .chair:
-                return "Chairs"
             case .sofa:
                 return "Sofas"
+            case .chair:
+                return "Chairs"
             case .cupboard:
                 return "Cupboards"
         }
@@ -32,9 +32,9 @@ enum ProductCategories: Int, CaseIterable {
                 return 1
             case .sofa:
                 return 2
-            case .cupboard:
-                return 3
             case .chair:
+                return 3
+            case .cupboard:
                 return 4
         }
     }
@@ -43,10 +43,10 @@ enum ProductCategories: Int, CaseIterable {
         switch self {
             case .table:
                 return AppIcons.ProductCategoryIcons.table
-            case .chair:
-                return AppIcons.ProductCategoryIcons.chair
             case .sofa:
                 return AppIcons.ProductCategoryIcons.sofa
+            case .chair:
+                return AppIcons.ProductCategoryIcons.chair
             case .cupboard:
                 return AppIcons.ProductCategoryIcons.cupboard
         }

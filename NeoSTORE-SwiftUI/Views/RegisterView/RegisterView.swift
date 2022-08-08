@@ -24,8 +24,13 @@ struct RegisterView: View {
             GeometryReader(content: { geometry in
                 ScrollView(.vertical, showsIndicators: false){
 //                    VStack{
-//
                         LazyVStack(alignment: .center, spacing: nil, content: {
+                            
+                            NavigationBarView(title: "Register", leftNavigationButton: .back, rightNavigationButton: nil, leftNavigationButtonAction: {
+                                debugPrint("clicked home")
+//                                self.presentation.wrappedValue.dismiss()
+                            }, rightNavigationButtonAction: nil)
+                            
                             Spacer()
                             
                             AppTitleView()
@@ -97,9 +102,7 @@ struct RegisterView: View {
             })
             
         }
-        .navigationTitle(Text("Register"))
-        .navigationBarTitleDisplayMode(.inline)
-//        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
         .clipped()
     }
     
@@ -108,8 +111,5 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
-            .environment(\.sizeCategory, .extraExtraLarge)
-            .previewLayout(.fixed(width: 396.0, height: /*@START_MENU_TOKEN@*/800.0/*@END_MENU_TOKEN@*/))
-            
     }
 }

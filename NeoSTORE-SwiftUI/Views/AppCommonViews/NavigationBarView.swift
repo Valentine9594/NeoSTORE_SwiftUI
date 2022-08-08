@@ -26,7 +26,7 @@ enum NavigationButtonItem {
 struct NavigationBarView: View {
     let title: String
     let leftNavigationButton: NavigationButtonItem
-    let rightNavigationButton: NavigationButtonItem
+    let rightNavigationButton: NavigationButtonItem?
     let leftNavigationButtonAction: (() -> Void)?
     let rightNavigationButtonAction: (() -> Void)?
     let screenHeight = UIScreen.main.bounds.size.height * 0.06
@@ -51,13 +51,18 @@ struct NavigationBarView: View {
             
             Spacer()
             
-            Button {
-                rightNavigationButtonAction?()
-            } label: {
-                Image(rightNavigationButton.iconName)
+            if let rightNavBarButton = rightNavigationButton {
+                Button {
+                    rightNavigationButtonAction?()
+                } label: {
+                    Image(rightNavBarButton.iconName)
+                }
+                .padding(.trailing, 8)
+                .frame(height: screenHeight)
+            } else {
+                Spacer(minLength: 8)
             }
-            .padding(.trailing, 8)
-            .frame(height: screenHeight)
+
         }
         .frame(width: UIScreen.main.bounds.size.width, height: screenHeight)
         .background(Color.appRed)

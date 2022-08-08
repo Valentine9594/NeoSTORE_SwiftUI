@@ -16,7 +16,7 @@ struct HomeView: View {
     private let homeViewGrid = [GridItem(.flexible(minimum: (UIScreen.main.bounds.width/2)-33), spacing: 12), GridItem(.flexible(minimum: (UIScreen.main.bounds.width/2)-33), spacing: 12)]
     
     var body: some View {
-        VStack(spacing: 0){
+        VStack(spacing: 0) {
             NavigationBarView(title: "NeoSTORE", leftNavigationButton: .sideMenu, rightNavigationButton: .search, leftNavigationButtonAction: {
                 debugPrint("clicked home")
                 self.presentation.wrappedValue.dismiss()
@@ -28,7 +28,7 @@ struct HomeView: View {
                 .padding(.bottom, 15)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.35)
             
-            LazyHGrid(rows: homeViewGrid, spacing: 12) {
+            LazyVGrid(columns: homeViewGrid, spacing: 12) {
                 ForEach((1...ProductCategories.allCases.count), id: \.self) { index in
                     Image(ProductCategories(rawValue: index)?.imageName ?? "chairsicon")
                         .resizable()

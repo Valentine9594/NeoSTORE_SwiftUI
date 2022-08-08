@@ -28,4 +28,8 @@ enum APPError: Error {
                 return nil
         }
     }
+    
+    static func map(_ error: Error) -> APPError {
+      return (error as? APPError) ?? .somethingWentWrong
+    }
 }
